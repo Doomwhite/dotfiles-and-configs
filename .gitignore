@@ -28,3 +28,13 @@ browser-data/opera-gx/profile/*
 browser-data/opera-gx/profile/data/*
 !browser-data/opera-gx/profile/data
 !browser-data/opera-gx/profile/data/Web Data
+
+sharex/*
+!sharex/Sharex
+sharex/Sharex/*
+!sharex/ShareX/.gitignore
+!sharex/ShareX/.gitattributes
+!sharex/ShareX/ApplicationConfig.json
+!sharex/ShareX/History.json
+!sharex/ShareX/HotkeysConfig.json
+!sharex/ShareX/UploadersConfig.json
