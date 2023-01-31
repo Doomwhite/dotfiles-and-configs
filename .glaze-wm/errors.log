@@ -1,0 +1,84 @@
+11/11/2022 09:24:25
+GlazeWM.Infrastructure.Exceptions.FatalUserException: Failed to parse user config. Invalid command 'focus workspace 1'.
+   at GlazeWM.Domain.UserConfigs.CommandHandlers.EvaluateUserConfigHandler.ValidateDeserializedConfig(UserConfig deserializedConfig) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\UserConfigs\CommandHandlers\EvaluateUserConfigHandler.cs:line 181
+   at GlazeWM.Domain.UserConfigs.CommandHandlers.EvaluateUserConfigHandler.Handle(EvaluateUserConfigCommand command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\UserConfigs\CommandHandlers\EvaluateUserConfigHandler.cs:line 51
+   at GlazeWM.Infrastructure.Bussing.Bus.Invoke[T](T command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\Bussing\Bus.cs:line 34
+   at GlazeWM.Domain.Common.CommandHandlers.PopulateInitialStateHandler.Handle(PopulateInitialStateCommand command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\Common\CommandHandlers\PopulateInitialStateHandler.cs:line 38
+   at GlazeWM.Infrastructure.Bussing.Bus.Invoke[T](T command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\Bussing\Bus.cs:line 34
+   at GlazeWM.Bootstrapper.Startup.Run() in C:\Users\larsb\repos\GlazeWM\GlazeWM.Bootstrapper\Startup.cs:line 57
+State dump: {"X":0,"Y":0,"Width":0,"Height":0,"__type":"RootContainer","FocusIndex":0,"Children":[]}
+
+11/11/2022 09:25:30
+GlazeWM.Infrastructure.Exceptions.FatalUserException: Failed to parse user config. Invalid command 'focus workspace 1'.
+   at GlazeWM.Domain.UserConfigs.CommandHandlers.EvaluateUserConfigHandler.ValidateDeserializedConfig(UserConfig deserializedConfig) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\UserConfigs\CommandHandlers\EvaluateUserConfigHandler.cs:line 181
+   at GlazeWM.Domain.UserConfigs.CommandHandlers.EvaluateUserConfigHandler.Handle(EvaluateUserConfigCommand command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\UserConfigs\CommandHandlers\EvaluateUserConfigHandler.cs:line 51
+   at GlazeWM.Infrastructure.Bussing.Bus.Invoke[T](T command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\Bussing\Bus.cs:line 34
+   at GlazeWM.Domain.Common.CommandHandlers.PopulateInitialStateHandler.Handle(PopulateInitialStateCommand command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\Common\CommandHandlers\PopulateInitialStateHandler.cs:line 38
+   at GlazeWM.Infrastructure.Bussing.Bus.Invoke[T](T command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\Bussing\Bus.cs:line 34
+   at GlazeWM.Bootstrapper.Startup.Run() in C:\Users\larsb\repos\GlazeWM\GlazeWM.Bootstrapper\Startup.cs:line 57
+State dump: {"X":0,"Y":0,"Width":0,"Height":0,"__type":"RootContainer","FocusIndex":0,"Children":[]}
+
+11/11/2022 09:25:43
+GlazeWM.Infrastructure.Exceptions.FatalUserException: Failed to parse user config. Invalid command 'focus workspace 2'.
+   at GlazeWM.Domain.UserConfigs.CommandHandlers.EvaluateUserConfigHandler.ValidateDeserializedConfig(UserConfig deserializedConfig) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\UserConfigs\CommandHandlers\EvaluateUserConfigHandler.cs:line 181
+   at GlazeWM.Domain.UserConfigs.CommandHandlers.EvaluateUserConfigHandler.Handle(EvaluateUserConfigCommand command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\UserConfigs\CommandHandlers\EvaluateUserConfigHandler.cs:line 51
+   at GlazeWM.Infrastructure.Bussing.Bus.Invoke[T](T command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\Bussing\Bus.cs:line 34
+   at GlazeWM.Domain.Common.CommandHandlers.PopulateInitialStateHandler.Handle(PopulateInitialStateCommand command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\Common\CommandHandlers\PopulateInitialStateHandler.cs:line 38
+   at GlazeWM.Infrastructure.Bussing.Bus.Invoke[T](T command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\Bussing\Bus.cs:line 34
+   at GlazeWM.Bootstrapper.Startup.Run() in C:\Users\larsb\repos\GlazeWM\GlazeWM.Bootstrapper\Startup.cs:line 57
+State dump: {"X":0,"Y":0,"Width":0,"Height":0,"__type":"RootContainer","FocusIndex":0,"Children":[]}
+
+11/11/2022 09:29:43
+System.ArgumentException: Requested value 'Ctrl' was not found.
+   at System.Enum.TryParseByName(RuntimeType enumType, ReadOnlySpan`1 value, Boolean ignoreCase, Boolean throwOnFailure, UInt64& result)
+   at System.Enum.TryParseInt32Enum(RuntimeType enumType, ReadOnlySpan`1 value, Int32 minInclusive, Int32 maxInclusive, Boolean ignoreCase, Boolean throwOnFailure, TypeCode type, Int32& result)
+   at System.Enum.TryParse(Type enumType, ReadOnlySpan`1 value, Boolean ignoreCase, Boolean throwOnFailure, Object& result)
+   at System.Enum.Parse(Type enumType, String value)
+   at GlazeWM.Infrastructure.WindowsApi.KeybindingService.<>c.<AddGlobalKeybinding>b__7_1(String key) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\WindowsApi\KeybindingService.cs:line 68
+   at System.Linq.Utilities.<>c__DisplayClass2_0`3.<CombineSelectors>b__0(TSource x)
+   at System.Linq.Enumerable.SelectArrayIterator`2.MoveNext()
+   at System.Linq.Enumerable.CastIterator[TResult](IEnumerable source)+MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at GlazeWM.Infrastructure.WindowsApi.KeybindingService.AddGlobalKeybinding(String keybindingString, Action callback) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\WindowsApi\KeybindingService.cs:line 65
+   at GlazeWM.Domain.UserConfigs.CommandHandlers.RegisterKeybindingsHandler.Handle(RegisterKeybindingsCommand command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\UserConfigs\CommandHandlers\RegisterKeybindingsHandler.cs:line 47
+   at GlazeWM.Infrastructure.Bussing.Bus.Invoke[T](T command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\Bussing\Bus.cs:line 34
+   at GlazeWM.Domain.UserConfigs.CommandHandlers.EvaluateUserConfigHandler.Handle(EvaluateUserConfigCommand command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\UserConfigs\CommandHandlers\EvaluateUserConfigHandler.cs:line 54
+   at GlazeWM.Infrastructure.Bussing.Bus.Invoke[T](T command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\Bussing\Bus.cs:line 34
+   at GlazeWM.Domain.Common.CommandHandlers.PopulateInitialStateHandler.Handle(PopulateInitialStateCommand command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\Common\CommandHandlers\PopulateInitialStateHandler.cs:line 38
+   at GlazeWM.Infrastructure.Bussing.Bus.Invoke[T](T command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\Bussing\Bus.cs:line 34
+   at GlazeWM.Bootstrapper.Startup.Run() in C:\Users\larsb\repos\GlazeWM\GlazeWM.Bootstrapper\Startup.cs:line 57
+State dump: {"X":0,"Y":0,"Width":0,"Height":0,"__type":"RootContainer","FocusIndex":0,"Children":[]}
+
+11/11/2022 09:30:18
+System.ArgumentException: Requested value 'Cttrl' was not found.
+   at System.Enum.TryParseByName(RuntimeType enumType, ReadOnlySpan`1 value, Boolean ignoreCase, Boolean throwOnFailure, UInt64& result)
+   at System.Enum.TryParseInt32Enum(RuntimeType enumType, ReadOnlySpan`1 value, Int32 minInclusive, Int32 maxInclusive, Boolean ignoreCase, Boolean throwOnFailure, TypeCode type, Int32& result)
+   at System.Enum.TryParse(Type enumType, ReadOnlySpan`1 value, Boolean ignoreCase, Boolean throwOnFailure, Object& result)
+   at System.Enum.Parse(Type enumType, String value)
+   at GlazeWM.Infrastructure.WindowsApi.KeybindingService.<>c.<AddGlobalKeybinding>b__7_1(String key) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\WindowsApi\KeybindingService.cs:line 68
+   at System.Linq.Utilities.<>c__DisplayClass2_0`3.<CombineSelectors>b__0(TSource x)
+   at System.Linq.Enumerable.SelectArrayIterator`2.MoveNext()
+   at System.Linq.Enumerable.CastIterator[TResult](IEnumerable source)+MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at GlazeWM.Infrastructure.WindowsApi.KeybindingService.AddGlobalKeybinding(String keybindingString, Action callback) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\WindowsApi\KeybindingService.cs:line 65
+   at GlazeWM.Domain.UserConfigs.CommandHandlers.RegisterKeybindingsHandler.Handle(RegisterKeybindingsCommand command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\UserConfigs\CommandHandlers\RegisterKeybindingsHandler.cs:line 47
+   at GlazeWM.Infrastructure.Bussing.Bus.Invoke[T](T command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\Bussing\Bus.cs:line 34
+   at GlazeWM.Domain.UserConfigs.CommandHandlers.EvaluateUserConfigHandler.Handle(EvaluateUserConfigCommand command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\UserConfigs\CommandHandlers\EvaluateUserConfigHandler.cs:line 54
+   at GlazeWM.Infrastructure.Bussing.Bus.Invoke[T](T command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\Bussing\Bus.cs:line 34
+   at GlazeWM.Domain.Common.CommandHandlers.PopulateInitialStateHandler.Handle(PopulateInitialStateCommand command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\Common\CommandHandlers\PopulateInitialStateHandler.cs:line 38
+   at GlazeWM.Infrastructure.Bussing.Bus.Invoke[T](T command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\Bussing\Bus.cs:line 34
+   at GlazeWM.Bootstrapper.Startup.Run() in C:\Users\larsb\repos\GlazeWM\GlazeWM.Bootstrapper\Startup.cs:line 57
+State dump: {"X":0,"Y":0,"Width":0,"Height":0,"__type":"RootContainer","FocusIndex":0,"Children":[]}
+
+16/11/2022 08:21:13
+GlazeWM.Infrastructure.Exceptions.FatalUserException: Failed to parse user config. Invalid command 'focus workspace previous'.
+   at GlazeWM.Domain.UserConfigs.CommandHandlers.EvaluateUserConfigHandler.ValidateDeserializedConfig(UserConfig deserializedConfig) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\UserConfigs\CommandHandlers\EvaluateUserConfigHandler.cs:line 207
+   at GlazeWM.Domain.UserConfigs.CommandHandlers.EvaluateUserConfigHandler.Handle(EvaluateUserConfigCommand command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\UserConfigs\CommandHandlers\EvaluateUserConfigHandler.cs:line 53
+   at GlazeWM.Infrastructure.Bussing.Bus.Invoke[T](T command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\Bussing\Bus.cs:line 34
+   at GlazeWM.Domain.Common.CommandHandlers.PopulateInitialStateHandler.Handle(PopulateInitialStateCommand command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Domain\Common\CommandHandlers\PopulateInitialStateHandler.cs:line 38
+   at GlazeWM.Infrastructure.Bussing.Bus.Invoke[T](T command) in C:\Users\larsb\repos\GlazeWM\GlazeWM.Infrastructure\Bussing\Bus.cs:line 34
+   at GlazeWM.Bootstrapper.Startup.Run() in C:\Users\larsb\repos\GlazeWM\GlazeWM.Bootstrapper\Startup.cs:line 57
+State dump: {"X":0,"Y":0,"Width":0,"Height":0,"__type":"RootContainer","FocusIndex":0,"Children":[]}
+

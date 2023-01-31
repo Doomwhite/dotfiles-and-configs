@@ -1,0 +1,6 @@
+2022-11-24 09:17:55 INFO log.py: Yasb - Yet Another Status Bar
+2022-11-24 09:18:38 INFO bar_manager.py: Starting SystemEventListener...
+2022-11-24 09:18:38 INFO bar_manager.py: Starting KomorebiEventListener...
+2022-11-24 09:18:38 INFO event_listener.py: Created named pipe yasb-20535f5e-6bf2-11ed-86a1-047f0e11a99f
+2022-11-24 09:18:38 INFO event_listener.py: Waiting for Komorebi to subscribe to named pipe yasb-20535f5e-6bf2-11ed-86a1-047f0e11a99f
+2022-11-24 09:18:38 INFO watcher.py: Created file watcher for path C:\Users\adinelson.bruhmuller.MOVTECH\.yasb

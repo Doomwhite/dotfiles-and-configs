@@ -1,0 +1,118 @@
+[core]
+	editor = nvim
+	longpaths = true
+
+[user]
+	name = Adinelson Brühmüller
+	email = adinelson.bruhmuller@movtech.com.br
+
+[credential]
+	helper = manager-core
+
+[credential "https://sources.movtech.com.br:3344"]
+	provider = generic
+
+[diff]
+  tool = vscode
+
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+  tool = vscode
+
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+
+[fetch]
+	prune = true
+
+[alias]
+	br = branch
+	bra = branch -a
+	brl = branch -l
+	brr = branch -r
+	cg = config
+	cgg = config --global -e
+	cgl = config --local -e
+	cldn = clean -dn
+	cm = commit
+	cmam = commit -a -m
+	cmad = commit --amend
+	cmadam = commit --amend -a -m
+	cmadan = commit --amend -a --no-edit
+	cmadm = commit --amend -m
+	cmadn = commit --amend --no-edit
+	co = checkout
+	cohf = checkout HEAD --
+  cyp = crypt
+	df = diff
+	dfv = difftool -t vimdiff
+	fe = fetch
+	fea = fetch --all
+	feat = fetch --all --tags
+	l = log
+	lcm = log -1 HEAD --stat
+	lo = log --graph --all --topo-order --pretty='format:%h %ai %s%d (%an)'
+	logo = log --oneline
+	lomh = log origin/master..HEAD
+	lomd = log origin/dev..HEAD
+	lp = log --color --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'
+	lsw = switch -
+	pl = pull
+	plo = pull origin
+	plom = pull origin master
+	plod = pull origin dev
+	ps = push
+	psf = push --force
+	psu = push -u
+  rstm = reset --hard origin/master
+  rstd = reset --hard origin/dev
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbm = rebase master
+	rbd = rebase dev
+	rescue = !git fsck --full --no-reflogs --unreachable --lost-found | grep commit | cut -d\\  -f3 | xargs -n 1 git log -n 1 --pretty=oneline > .git/lost-found.txt
+	rmpo = remote prune origin
+	sh = stash
+	sha = stash apply
+	shc = stash clear
+	shl = stash list
+	shs = stash save
+	st = status
+	sw = switch
+	swm = switch master
+	swd = switch dev
+	un = ls-files . --exclude-standard --others
+[safe]
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/scoop/current
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/versions
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/nerd-fonts
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/extras
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/main
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/rustlings
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/AppData/Local/nvim-data/site/pack/packer/start/plenary.nvim
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/AppData/Local/nvim-data/site/pack/packer/start/packer.nvim
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/AppData/Local/nvim-data/site/pack/packer/start/popup.nvim
+  directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Rust/guessing_game
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/pcsx2-dev/bios
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/pcsx2-dev
+	directory = C:/Projetos/quality-project/quality-app
+	directory = C:/Projetos/quality-project/quality-api
+	directory = C:/Projetos/bsc-project/bsc-app
+	directory = C:/Projetos/bsc-project/bsc-api
+	directory = C:/Projetos/menu-project/menu-app
+	directory = C:/Projetos/menu-project/menu-api
+	directory = C:/Projetos/stats-project/stats-app
+	directory = C:/Projetos/stats-project/stats-api
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/irfanview
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/anki
+	directory = C:/Projetos/budget-project/budget-api
+	directory = C:/Projetos/budget-project/budget-app
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/.glaze-wm
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

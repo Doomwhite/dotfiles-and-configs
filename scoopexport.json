@@ -1,0 +1,431 @@
+{
+    "apps": [
+        {
+            "Version": "22.01",
+            "Updated": "2022-09-19T10:24:19.2506536-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "7zip"
+        },
+        {
+            "Version": "2.1.54",
+            "Updated": "2022-09-19T10:24:38.926156-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "anki"
+        },
+        {
+            "Version": "2.922",
+            "Updated": "2022-09-21T07:54:58.0372398-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "cygwin"
+        },
+        {
+            "Version": "3.11.2",
+            "Updated": "2022-09-19T10:25:42.5516568-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "dark"
+        },
+        {
+            "Version": "22.2.0",
+            "Updated": "2022-09-19T10:25:55.0791969-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "dbeaver"
+        },
+        {
+            "Version": "1.25.3",
+            "Updated": "2022-09-19T10:25:58.7970426-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "deno"
+        },
+        {
+            "Version": "1.0.9006-13",
+            "Updated": "2022-09-19T10:26:21.2054254-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "discord"
+        },
+        {
+            "Version": "20.10.18",
+            "Updated": "2022-09-20T10:55:22.7226027-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "docker"
+        },
+        {
+            "Version": "1.5.0.1319a",
+            "Updated": "2022-09-19T11:03:04.8831641-03:00",
+            "Source": "versions",
+            "Info": "",
+            "Name": "everything-alpha"
+        },
+        {
+            "Version": "8.4.0",
+            "Updated": "2022-09-22T13:22:44.1454925-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "fd"
+        },
+        {
+            "Version": "5.1.1",
+            "Updated": "2022-09-19T10:29:00.6310694-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "ffmpeg"
+        },
+        {
+            "Version": "4.120",
+            "Updated": "2022-09-19T10:29:03.9630513-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "flux"
+        },
+        {
+            "Version": "11.2.0",
+            "Updated": "2022-09-19T10:29:48.2603335-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "gcc"
+        },
+        {
+            "Version": "2.37.3.windows.1",
+            "Updated": "2022-09-19T10:30:01.2607738-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "git"
+        },
+        {
+            "Version": "108.0.5311.0",
+            "Updated": "2022-09-20T08:24:04.577003-03:00",
+            "Source": "versions",
+            "Info": "",
+            "Name": "googlechrome-canary"
+        },
+        {
+            "Version": "2.3.7",
+            "Updated": "2022-09-19T13:58:22.2185217-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "gpg"
+        },
+        {
+            "Version": "3.7",
+            "Updated": "2022-09-19T10:30:57.8756408-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "grep"
+        },
+        {
+            "Version": "2.0.10",
+            "Updated": "2022-09-19T10:30:58.6830098-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "grepwin"
+        },
+        {
+            "Version": "0.50",
+            "Updated": "2022-09-19T10:30:59.0605368-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "innounp"
+        },
+        {
+            "Version": "104.0.2-1",
+            "Updated": "2022-09-19T13:33:48.5236375-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "librewolf"
+        },
+        {
+            "Version": "nightly-20220919",
+            "Updated": "2022-09-19T10:30:59.7203307-03:00",
+            "Source": "versions",
+            "Info": "",
+            "Name": "lightshot"
+        },
+        {
+            "Version": "15.0.1",
+            "Updated": "2022-09-22T13:25:24.8245929-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "llvm"
+        },
+        {
+            "Version": "3.4.3",
+            "Updated": "2022-09-19T10:31:02.6055998-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "lockhunter"
+        },
+        {
+            "Version": "5.4.2",
+            "Updated": "2022-09-19T10:31:06.2805806-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "lua"
+        },
+        {
+            "Version": "4.3",
+            "Updated": "2022-09-19T10:31:07.8354238-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "make"
+        },
+        {
+            "Version": "22.06",
+            "Updated": "2022-09-22T13:50:59.9853534-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "mediainfo"
+        },
+        {
+            "Version": "12.2.0",
+            "Updated": "2022-09-19T10:31:55.9116211-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "mingw"
+        },
+        {
+            "Version": "2022-09-04",
+            "Updated": "2022-09-19T10:32:27.2252396-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "msys2"
+        },
+        {
+            "Version": "0.15.4",
+            "Updated": "2022-09-21T07:55:08.7995613-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "mutagen"
+        },
+        {
+            "Version": "0.8.0-dev-1135-gd76017c61",
+            "Updated": "2022-09-22T08:53:25.3723283-03:00",
+            "Source": "versions",
+            "Info": "",
+            "Name": "neovim-nightly"
+        },
+        {
+            "Version": "1.1.9",
+            "Updated": "2022-09-19T10:35:55.5116891-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "nvm"
+        },
+        {
+            "Version": "90.0.4480.86",
+            "Updated": "2022-09-19T10:36:15.3877914-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "opera-gx"
+        },
+        {
+            "Version": "1.7.3329",
+            "Updated": "2022-09-21T07:55:12.696383-03:00",
+            "Source": "games",
+            "Info": "",
+            "Name": "pcsx2-dev"
+        },
+        {
+            "Version": "5.32.1.1",
+            "Updated": "2022-09-19T10:50:58.6567257-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "perl"
+        },
+        {
+            "Version": "10.0.1",
+            "Updated": "2022-09-19T10:51:21.6419428-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "postman"
+        },
+        {
+            "Version": "7.2.6",
+            "Updated": "2022-09-19T10:21:45.4810158-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "pwsh"
+        },
+        {
+            "Version": "3.10.7",
+            "Updated": "2022-09-19T10:52:12.8162212-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "python"
+        },
+        {
+            "Version": "13.0.0",
+            "Updated": "2022-09-22T13:22:48.4608418-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "ripgrep"
+        },
+        {
+            "Version": "2022-09-19",
+            "Updated": "2022-09-19T10:52:15.8283008-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "rust-analyzer"
+        },
+        {
+            "Version": "1.25.1",
+            "Updated": "2022-09-19T10:52:53.1581621-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "rustup"
+        },
+        {
+            "Version": "14.1.0",
+            "Updated": "2022-09-19T14:37:23.4089173-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "sharex"
+        },
+        {
+            "Version": "nightly-20220919",
+            "Updated": "2022-09-19T10:52:53.8844142-03:00",
+            "Source": "versions",
+            "Info": "",
+            "Name": "steam"
+        },
+        {
+            "Version": "4-4126",
+            "Updated": "2022-09-19T10:55:20.7832641-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "sublime-text"
+        },
+        {
+            "Version": "0.2020.01.26",
+            "Updated": "2022-09-19T10:30:59.9774967-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "sudo"
+        },
+        {
+            "Version": "10.51",
+            "Updated": "2022-09-22T15:06:33.174395-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "totalcommander"
+        },
+        {
+            "Version": "0.0.15",
+            "Updated": "2022-09-19T10:58:31.6138725-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "uutils-coreutils"
+        },
+        {
+            "Version": "9.0",
+            "Updated": "2022-09-19T10:55:43.1149112-03:00",
+            "Source": "main",
+            "Info": "",
+            "Name": "vim"
+        },
+        {
+            "Version": "6.1.38",
+            "Updated": "2022-09-19T13:30:10.3514677-03:00",
+            "Source": "nonportable",
+            "Info": "",
+            "Name": "virtualbox-with-extension-pack-np"
+        },
+        {
+            "Version": "1.71.2",
+            "Updated": "2022-09-19T11:00:04.500739-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "vscode"
+        },
+        {
+            "Version": "20220905-102802-7d4b8249",
+            "Updated": "2022-09-19T10:56:19.785497-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "wezterm"
+        },
+        {
+            "Version": "2.16.22",
+            "Updated": "2022-09-19T10:56:22.8490484-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "winmerge"
+        },
+        {
+            "Version": "6.11",
+            "Updated": "2022-09-19T10:56:28.1683767-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "winrar"
+        },
+        {
+            "Version": "1.1.13",
+            "Updated": "2022-09-19T10:56:28.716341-03:00",
+            "Source": "extras",
+            "Info": "",
+            "Name": "z"
+        }
+    ],
+    "buckets": [
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2022-09-22T13:30:15-03:00",
+            "Manifests": 1692
+        },
+        {
+            "Name": "games",
+            "Source": "https://github.com/Calinou/scoop-games",
+            "Updated": "2022-09-22T13:30:59-03:00",
+            "Manifests": 236
+        },
+        {
+            "Name": "java",
+            "Source": "https://github.com/ScoopInstaller/Java",
+            "Updated": "2022-09-22T04:15:58-03:00",
+            "Manifests": 226
+        },
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main",
+            "Updated": "2022-09-22T13:30:39-03:00",
+            "Manifests": 1083
+        },
+        {
+            "Name": "nerd-fonts",
+            "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
+            "Updated": "2022-09-19T09:32:57-03:00",
+            "Manifests": 203
+        },
+        {
+            "Name": "nirsoft",
+            "Source": "https://github.com/kodybrown/scoop-nirsoft",
+            "Updated": "2022-06-21T13:00:55-03:00",
+            "Manifests": 271
+        },
+        {
+            "Name": "nonportable",
+            "Source": "https://github.com/ScoopInstaller/Nonportable",
+            "Updated": "2022-09-22T10:12:10-03:00",
+            "Manifests": 102
+        },
+        {
+            "Name": "php",
+            "Source": "https://github.com/ScoopInstaller/PHP",
+            "Updated": "2022-08-31T00:35:27-03:00",
+            "Manifests": 385
+        },
+        {
+            "Name": "versions",
+            "Source": "https://github.com/ScoopInstaller/Versions",
+            "Updated": "2022-09-22T13:58:55-03:00",
+            "Manifests": 359
+        }
+    ]
+}

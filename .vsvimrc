@@ -1,0 +1,72 @@
+" Variables
+   let mapleader="\<Space>"
+   set clipboard=unnamed
+   set smartcase
+	 set ignorecase
+	 set incsearch
+	 set hlsearch 
+
+" Easy Movement
+	noremap K {
+	noremap J }
+	noremap H ^
+	noremap L $
+  noremap gb '.
+  inoremap jk <ESC>
+  inoremap jj <ESC>
+
+	nmap <C-u> 15<C-y>15k
+	nmap <C-d> 15<C-e>15j
+
+" Global Commands
+	nmap <leader>wa :vsc File.SaveAll<CR>
+	nmap <leader>.e :vsc View.SolutionExplorer<CR>
+	nmap <leader>.a :vsc File.SaveAll<CR>
+	nmap <leader>.z :vsc CodeMaid.FindInSolutionExplorer<CR>
+
+" Windows
+	nmap <C-O> :vsc View.NavigateBackward<CR>
+	nmap <C-I> :vsc View.NavigateForward<CR>
+	vmap <C-O> :vsc View.NavigateBackward<CR>
+	vmap <C-I> :vsc View.NavigateForward<CR>
+	nnoremap <Leader>wn :vsc Window.PreviousDocumentWindowNav<CR>
+	nnoremap <Leader>wp :vsc Edit.GoToRecentFile<CR>
+
+" Comments
+	nmap gc :vsc Edit.CommentSelection<CR>
+	nmap gcu :vsc Edit.UnCommentSelection<CR>
+	vmap gc :vsc Edit.CommentSelection<CR>
+	vmap gcu :vsc Edit.UnCommentSelection<CR>
+
+" Search
+	nmap <leader>ef :vsc Tools.InvokeAceJumpCommand<CR>
+	nnoremap <Leader>ff :vsc Edit.GoToRecentFile<CR>
+	nnoremap <Leader>fs :vsc Edit.GoToSymbol<CR>
+	nnoremap <Leader>ft :vsc Edit.FindInFiles<CR>
+	nnoremap <leader>eg :vsc Tools.InvokePeasyMotion<CR>
+	nnoremap <leader>ej :vsc Tools.InvokePeasyMotionJumpToLineBegining<CR>
+	nnoremap <leader>es :vsc Tools.InvokePeasyMotionTwoCharJump<CR>
+	nnoremap <leader>ee :vsc Tools.InvokePeasyMotionLineJumpToWordEnding<CR>
+
+" Go To
+	nmap gi :vsc Edit.GoToImplementation<CR>
+	nmap gr :vsc Edit.FindAllReferences<CR>
+	nmap gp :vsc Edit.PeekDefinition<CR>
+	nmap gq :vsc View.QuickActionsForPosition<CR>
+
+" Debug
+	nmap <leader>db :vsc Debug.ToggleBreakPoint<CR>
+	nmap <leader>dbd :vsc Debug.DeleteAllBreakPoints<CR>
+	nmap <leader>de :vsc Debug.EnableBreakPoint<CR>
+	nmap <leader>dee :vsc Debug.EnableAllBreakPoints<CR>
+	nmap <leader>ded :vsc Debug.DisableAllBreakPoints<CR>
+  imap <C-v> npi<CR>
+
+" Refactor
+  nnoremap <leader>rr :vsc Refactor.Rename<CR>
+
+" Debug
+  " nmap <leader>db
+
+" Formatting
+	nmap = :vsc CodeMaid.CleanupActiveDocument<CR>
