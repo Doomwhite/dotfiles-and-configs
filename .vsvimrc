@@ -32,7 +32,7 @@
 	nnoremap <Leader>wn :vsc Window.PreviousDocumentWindowNav<CR>
 	nnoremap <Leader>wp :vsc Edit.GoToRecentFile<CR>
 
-" Comments
+" Comments key bindings
 	nmap gc :vsc Edit.CommentSelection<CR>
 	nmap gcu :vsc Edit.UnCommentSelection<CR>
 	vmap gc :vsc Edit.CommentSelection<CR>
@@ -69,4 +69,4 @@
   " nmap <leader>db
 
 " Formatting
-	nmap = :vsc CodeMaid.CleanupActiveDocument<CR>
+	nmap <leader>= :vsc CodeMaid.CleanupActiveDocument<CR>
