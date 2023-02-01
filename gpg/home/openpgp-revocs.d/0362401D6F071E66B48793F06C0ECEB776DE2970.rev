@@ -1,0 +1,32 @@
+This is a revocation certificate for the OpenPGP key:
+
+pub   rsa2048 2022-09-19 [S]
+      0362401D6F071E66B48793F06C0ECEB776DE2970
+uid          adinelson.bruhmuller (teste) <adinelson.bruhmuller@movtech.com.br>
+
+A revocation certificate is a kind of "kill switch" to publicly
+declare that a key shall not anymore be used.  It is not possible
+to retract such a revocation certificate once it has been published.
+
+Use it to revoke this key in case of a compromise or loss of
+the secret key.  However, if the secret key is still accessible,
+it is better to generate a new revocation certificate and give
+a reason for the revocation.  For details see the description of
+of the gpg command "--generate-revocation" in the GnuPG manual.
+
+To avoid an accidental use of this file, a colon has been inserted
+before the 5 dashes below.  Remove this colon with a text editor
+before importing and publishing this revocation certificate.
+
+:-----BEGIN PGP PUBLIC KEY BLOCK-----
+Comment: This is a revocation certificate
+
+iQE2BCABCAAgFiEEA2JAHW8HHma0h5PwbA7Ot3beKXAFAmMopY0CHQAACgkQbA7O
+t3beKXBmLQf/cF4BkgRMWxuONTVVMnVoLQo4QDMI540Qhn441DN4gq7FfS8BM29B
+vrlpnkcKhNx+RACEBQLnojJco3KJPujy555Dx2nL/8mi/2j5eKws7FYB93bBnxzw
+0/9XfCMBbMVzjkBxvTAjJnTopiyDQyTSJnC7eYkB9wMcjMelK+8SomesjKf2lOkg
+EPSTDLtjZMvRgVhbZzzKLRA7wIzGQGBAJn9Ufq1cftSSoaLS26hUli8fy/KtpSdS
+3fLSlp+B0TdDi4h6wzasUPcw8pjzLddRS3/9e8EiWD8zM86SjdtRjWXkI0mpaAgr
+if2B00TSqXFEK/D0hG6i3R/m7yb7kwrCWg==
+=+ipY
+-----END PGP PUBLIC KEY BLOCK-----
