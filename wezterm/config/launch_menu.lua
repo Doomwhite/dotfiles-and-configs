@@ -3,48 +3,48 @@ local userDirectory = require("../utils/directories").directories.getUser()
 local isPc = require("../utils/directories").directories.getIsPc()
 if isPc then
   return {
-  {
-      label = "PowerShell",
-      args = {"C:/Program Files/PowerShell/7/pwsh.exe", "-WorkingDirectory", wezterm.home_dir},
-      domain = {DomainName="local"},
-  },
-  {
-      label = "Bash",
-      args = {"C:/Program Files/Git/bin/bash.exe"},
-      cwd = userDirectory,
-      domain = {DomainName="local"},
-  },
-  {
-      label = "Wezterm Config",
-      args = {"C:/Program Files/PowerShell/7/pwsh.exe"},
-      cwd = userDirectory .. ".config/wezterm",
-      domain = {DomainName="local"},
-  },
-  {
-      label = "Neovim Config",
-      args = {"C:/Program Files/PowerShell/7/pwsh.exe"},
-      cwd = userDirectory .. "AppData/Local/nvim",
-      domain = {DomainName="local"},
-  },
-  {
-      label = "Zsh Neovim Config",
-      args = {userDirectory .. "scoop/shims/msys2.exe"},
-      cwd = userDirectory .. "AppData/Local/nvim",
-      domain = {DomainName="local"},
-  }, 
-  {
-      label = "Rustling Exercises",
-      args = {userDirectory .. "scoop/shims/pwsh.exe"},
-      cwd = userDirectory .. "Documents/Projects/Rust/rustlings",
-      domain = {DomainName="local"},
-  }, 
-  {
-      label = "Documents",
-      args = {userDirectory .. "scoop/shims/pwsh.exe"},
-      cwd = userDirectory .. "Documents",
-      domain = {DomainName="local"},
-  },
-}
+      {
+          label = "PowerShell",
+          args = {"C:/Program Files/PowerShell/7/pwsh.exe", "-WorkingDirectory", wezterm.home_dir},
+          domain = {DomainName="local"},
+      },
+      {
+          label = "Bash",
+          args = {"C:/Program Files/Git/bin/bash.exe"},
+          cwd = userDirectory,
+          domain = {DomainName="local"},
+      },
+      {
+          label = "Wezterm Config",
+          args = {"C:/Program Files/PowerShell/7/pwsh.exe"},
+          cwd = userDirectory .. ".config/wezterm",
+          domain = {DomainName="local"},
+      },
+      {
+          label = "Neovim Config",
+          args = {"C:/Program Files/PowerShell/7/pwsh.exe"},
+          cwd = userDirectory .. "AppData/Local/nvim",
+          domain = {DomainName="local"},
+      },
+      {
+          label = "Zsh Neovim Config",
+          args = {userDirectory .. "scoop/shims/msys2.exe"},
+          cwd = userDirectory .. "AppData/Local/nvim",
+          domain = {DomainName="local"},
+      }, 
+      {
+          label = "Rustling Exercises",
+          args = {userDirectory .. "scoop/shims/pwsh.exe"},
+          cwd = userDirectory .. "Documents/Projects/Rust/rustlings",
+          domain = {DomainName="local"},
+      }, 
+      {
+          label = "Documents",
+          args = {userDirectory .. "scoop/shims/pwsh.exe"},
+          cwd = userDirectory .. "Documents",
+          domain = {DomainName="local"},
+      },
+    }
 else
   return {
     {
