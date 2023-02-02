@@ -5,11 +5,12 @@ anki/data/User 1/backups
 # Recursive ignore exclusion
 browser-data/Sidekick/*
 !browser-data/Sidekick
-!browser-data/Sidekick/User Data/*
-browser-data/Sidekick/User Data
-!browser-data/Sidekick/User Data/Default/*
-browser-data/Sidekick/User Data/Default
+browser-data/Sidekick/User Data/*
+!browser-data/Sidekick/User Data
+browser-data/Sidekick/User Data/Default/*
+!browser-data/Sidekick/User Data/Default
 !browser-data/Sidekick/User Data/Default/Web Data
+!browser-data/Sidekick/User Data/Default/History
 
 # OperaGX
 # Recursive ignore exclusion
@@ -20,6 +21,7 @@ browser-data/opera-gx/profile/*
 browser-data/opera-gx/profile/data/*
 !browser-data/opera-gx/profile/data
 !browser-data/opera-gx/profile/data/Web Data
+!browser-data/opera-gx/profile/data/History
 
 # ShareX
 # Recursive ignore exclusion
