@@ -48,3 +48,6 @@ vscode/!/data/user-data/User/
 vscode/data/user-data/User/globalStorage/
 vscode/data/user-data/User/workspaceStorage/
 vscode/data/user-data/User/History/
+
+# Neovim
+nvim/.git
