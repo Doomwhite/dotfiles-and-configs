@@ -247,7 +247,9 @@
           "LastStickerPath": null,
           "BlurRadius": 35,
           "PixelateSize": 15,
-          "HighlightColor": "Yellow"
+          "HighlightColor": "Yellow",
+          "CutOutEffectType": "None",
+          "CutOutEffectSize": 10
         },
         "LastRegionTool": "RegionRectangle",
         "LastAnnotationTool": "DrawingRectangle",
@@ -374,9 +376,9 @@
       "UseCustomTimeZone": false,
       "CustomTimeZone": {
         "Id": "UTC",
-        "DisplayName": "(UTC) Tempo Universal Coordenado",
-        "StandardName": "Tempo Universal Coordenado",
-        "DaylightName": "Tempo Universal Coordenado",
+        "DisplayName": "(UTC) Coordinated Universal Time",
+        "StandardName": "Coordinated Universal Time",
+        "DaylightName": "Coordinated Universal Time",
         "BaseUtcOffset": "00:00:00",
         "AdjustmentRules": null,
         "SupportsDaylightSavingTime": false
@@ -432,6 +434,7 @@
         "Orientation": "Vertical",
         "Alignment": "LeftOrTop",
         "Space": 0,
+        "WrapAfter": 0,
         "AutoFillBackground": false
       },
       "VideoConverterOptions": {
@@ -598,24 +601,24 @@
   "Themes": [
     {
       "Name": "Dark",
-      "BackgroundColor": "42, 47, 56",
-      "LightBackgroundColor": "52, 57, 65",
-      "DarkBackgroundColor": "28, 32, 38",
-      "TextColor": "235, 235, 235",
-      "BorderColor": "28, 32, 38",
-      "CheckerColor": "60, 60, 60",
-      "CheckerColor2": "50, 50, 50",
+      "BackgroundColor": "39, 39, 39",
+      "LightBackgroundColor": "46, 46, 46",
+      "DarkBackgroundColor": "34, 34, 34",
+      "TextColor": "231, 233, 234",
+      "BorderColor": "31, 31, 31",
+      "CheckerColor": "46, 46, 46",
+      "CheckerColor2": "39, 39, 39",
       "CheckerSize": 15,
       "LinkColor": "166, 212, 255",
-      "MenuHighlightColor": "30, 34, 40",
-      "MenuHighlightBorderColor": "116, 129, 152",
-      "MenuBorderColor": "22, 26, 31",
-      "MenuCheckBackgroundColor": "56, 64, 75",
+      "MenuHighlightColor": "46, 46, 46",
+      "MenuHighlightBorderColor": "63, 63, 63",
+      "MenuBorderColor": "63, 63, 63",
+      "MenuCheckBackgroundColor": "51, 51, 51",
       "MenuFont": "Segoe UI, 9.75pt",
       "ContextMenuFont": "Segoe UI, 9.75pt",
       "ContextMenuOpacity": 100,
-      "SeparatorLightColor": "56, 64, 75",
-      "SeparatorDarkColor": "22, 26, 31"
+      "SeparatorLightColor": "44, 44, 44",
+      "SeparatorDarkColor": "31, 31, 31"
     },
     {
       "Name": "Light",
@@ -637,6 +640,27 @@
       "ContextMenuOpacity": 100,
       "SeparatorLightColor": "253, 253, 253",
       "SeparatorDarkColor": "189, 189, 189"
+    },
+    {
+      "Name": "Night",
+      "BackgroundColor": "42, 47, 56",
+      "LightBackgroundColor": "52, 57, 65",
+      "DarkBackgroundColor": "28, 32, 38",
+      "TextColor": "235, 235, 235",
+      "BorderColor": "28, 32, 38",
+      "CheckerColor": "60, 60, 60",
+      "CheckerColor2": "50, 50, 50",
+      "CheckerSize": 15,
+      "LinkColor": "166, 212, 255",
+      "MenuHighlightColor": "30, 34, 40",
+      "MenuHighlightBorderColor": "116, 129, 152",
+      "MenuBorderColor": "22, 26, 31",
+      "MenuCheckBackgroundColor": "56, 64, 75",
+      "MenuFont": "Segoe UI, 9.75pt",
+      "ContextMenuFont": "Segoe UI, 9.75pt",
+      "ContextMenuOpacity": 100,
+      "SeparatorLightColor": "56, 64, 75",
+      "SeparatorDarkColor": "22, 26, 31"
     },
     {
       "Name": "Nord Dark",
@@ -972,5 +996,5 @@
   "DropAlignment": "BottomRight",
   "DropOpacity": 100,
   "DropHoverOpacity": 255,
-  "ApplicationVersion": "14.1.0"
+  "ApplicationVersion": "15.0.0"
 }

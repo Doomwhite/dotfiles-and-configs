@@ -91,6 +91,7 @@
   "GfycatKeepAudio": true,
   "GfycatTitle": "ShareX",
   "GoogleDriveOAuth2Info": null,
+  "GoogleDriveUserInfo": null,
   "GoogleDriveIsPublic": true,
   "GoogleDriveDirectLink": false,
   "GoogleDriveUseFolder": false,
@@ -237,10 +238,12 @@
     "Comment": ""
   },
   "YouTubeOAuth2Info": null,
+  "YouTubeUserInfo": null,
   "YouTubePrivacyType": "Public",
   "YouTubeUseShortenedLink": false,
   "YouTubeShowDialog": false,
   "GoogleCloudStorageOAuth2Info": null,
+  "GoogleCloudStorageUserInfo": null,
   "GoogleCloudStorageBucket": "",
   "GoogleCloudStorageDomain": "",
   "GoogleCloudStorageObjectPrefix": "ShareX/%y/%mo",
@@ -282,5 +285,5 @@
   "CustomFileUploaderSelected": 0,
   "CustomURLShortenerSelected": 0,
   "CustomURLSharingServiceSelected": 0,
-  "ApplicationVersion": "14.1.0"
+  "ApplicationVersion": "15.0.0"
 }

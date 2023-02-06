@@ -253,7 +253,9 @@
               "LastStickerPath": null,
               "BlurRadius": 35,
               "PixelateSize": 15,
-              "HighlightColor": "Yellow"
+              "HighlightColor": "Yellow",
+              "CutOutEffectType": "None",
+              "CutOutEffectSize": 10
             },
             "LastRegionTool": "RegionRectangle",
             "LastAnnotationTool": "DrawingRectangle",
@@ -438,6 +440,7 @@
             "Orientation": "Vertical",
             "Alignment": "LeftOrTop",
             "Space": 0,
+            "WrapAfter": 0,
             "AutoFillBackground": false
           },
           "VideoConverterOptions": {
@@ -801,7 +804,9 @@
               "LastStickerPath": null,
               "BlurRadius": 35,
               "PixelateSize": 15,
-              "HighlightColor": "Yellow"
+              "HighlightColor": "Yellow",
+              "CutOutEffectType": "None",
+              "CutOutEffectSize": 10
             },
             "LastRegionTool": "RegionRectangle",
             "LastAnnotationTool": "DrawingRectangle",
@@ -986,6 +991,7 @@
             "Orientation": "Vertical",
             "Alignment": "LeftOrTop",
             "Space": 0,
+            "WrapAfter": 0,
             "AutoFillBackground": false
           },
           "VideoConverterOptions": {
@@ -1349,7 +1355,9 @@
               "LastStickerPath": null,
               "BlurRadius": 35,
               "PixelateSize": 15,
-              "HighlightColor": "Yellow"
+              "HighlightColor": "Yellow",
+              "CutOutEffectType": "None",
+              "CutOutEffectSize": 10
             },
             "LastRegionTool": "RegionRectangle",
             "LastAnnotationTool": "DrawingRectangle",
@@ -1534,6 +1542,7 @@
             "Orientation": "Vertical",
             "Alignment": "LeftOrTop",
             "Space": 0,
+            "WrapAfter": 0,
             "AutoFillBackground": false
           },
           "VideoConverterOptions": {
@@ -1897,7 +1906,9 @@
               "LastStickerPath": null,
               "BlurRadius": 35,
               "PixelateSize": 15,
-              "HighlightColor": "Yellow"
+              "HighlightColor": "Yellow",
+              "CutOutEffectType": "None",
+              "CutOutEffectSize": 10
             },
             "LastRegionTool": "RegionRectangle",
             "LastAnnotationTool": "DrawingRectangle",
@@ -2071,6 +2082,7 @@
             "Orientation": "Vertical",
             "Alignment": "LeftOrTop",
             "Space": 0,
+            "WrapAfter": 0,
             "AutoFillBackground": false
           },
           "VideoConverterOptions": {
@@ -2434,7 +2446,9 @@
               "LastStickerPath": null,
               "BlurRadius": 35,
               "PixelateSize": 15,
-              "HighlightColor": "Yellow"
+              "HighlightColor": "Yellow",
+              "CutOutEffectType": "None",
+              "CutOutEffectSize": 10
             },
             "LastRegionTool": "RegionRectangle",
             "LastAnnotationTool": "DrawingRectangle",
@@ -2608,6 +2622,7 @@
             "Orientation": "Vertical",
             "Alignment": "LeftOrTop",
             "Space": 0,
+            "WrapAfter": 0,
             "AutoFillBackground": false
           },
           "VideoConverterOptions": {
@@ -2719,5 +2734,5 @@
       }
     }
   ],
-  "ApplicationVersion": "14.1.0"
+  "ApplicationVersion": "15.0.0"
 }
