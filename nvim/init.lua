@@ -1,9 +1,1 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.colorscheme"
-require "user.cmp"
-require "user.nvim-tree.plugin"
-require "user.telescope.plugin"
-require "user.start-up.plugin"
-require "user.focus.plugin"
+require("doomwhite")
