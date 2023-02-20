@@ -32,11 +32,14 @@
 	bra = branch -a
 	brl = branch -l
 	brr = branch -r
+  cl = clone
+  clsm = clone --recurse-submodules 
 	cg = config
 	cgg = config --global -e
 	cgl = config --local -e
 	cldn = clean -dn
 	cm = commit
+	cmm = commit -m
 	cmam = commit -a -m
 	cmad = commit --amend
 	cmadam = commit --amend -a -m
@@ -75,6 +78,8 @@
 	rbd = rebase dev
 	rescue = !git fsck --full --no-reflogs --unreachable --lost-found | grep commit | cut -d\\  -f3 | xargs -n 1 git log -n 1 --pretty=oneline > .git/lost-found.txt
 	rmpo = remote prune origin
+  sm = submodule
+  smu = submodule update
 	sh = stash
 	sha = stash apply
 	shc = stash clear
@@ -85,6 +90,7 @@
 	swm = switch master
 	swd = switch dev
 	un = ls-files . --exclude-standard --others
+  rao = remote add origin
 [safe]
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/scoop/current
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/versions
