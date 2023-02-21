@@ -1,27 +1,37 @@
-vim.opt.nu = true
-vim.opt.relativenumber = true
+local api = vim.api
+local opt = vim.opt
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+api.nvim_exec('language en_US', true)
+opt.nu = true
+opt.relativenumber = true
 
-vim.opt.smartindent = true
+opt.tabstop = 4
 
-vim.opt.wrap = false
+opt.hlsearch = false
+opt.incsearch = true
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+opt.termguicolors = true
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+opt.scrolloff = 8
+opt.signcolumn = "yes"
+opt.isfname:append("@-@")
 
-vim.opt.termguicolors = true
+opt.updatetime = 50
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+api.nvim_set_option("clipboard", "unnamed")
 
-vim.opt.updatetime = 50
+local file_to_compile = ""
+local output_file = ""
+
+function SetCompileVars()
+    file_to_compile = vim.fn.input("Enter the file to compile: ")
+    output_file = vim.fn.input("Enter the output file name: ")
+end
+
+function RunCompiler()
+    local cmd = "g++ " .. file_to_compile .. " -o " .. output_file .. " & " .. output_file
+    vim.cmd(":ToggleTerm<CR>")
+    vim.cmd("startinsert!")
+    vim.api.nvim_feedkeys(cmd, "n", true)
+    -- vim.api.nvim_feedkeys("<CR>", "n", true)
+end
