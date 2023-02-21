@@ -205,8 +205,8 @@
           "ArrowHeadDirection": "End",
           "TextOutlineOptions": {
             "Font": "Arial",
-            "Size": 25,
-            "Color": "White",
+            "Size": 19,
+            "Color": "0, 0, 0",
             "Bold": true,
             "Italic": false,
             "Underline": false,
@@ -253,7 +253,7 @@
         },
         "LastRegionTool": "RegionRectangle",
         "LastAnnotationTool": "DrawingRectangle",
-        "LastEditorTool": "DrawingRectangle",
+        "LastEditorTool": "DrawingTextOutline",
         "ImageEditorStartMode": "AutoSize",
         "ImageEditorWindowState": {
           "Location": "0, 0",
@@ -272,7 +272,7 @@
         "ImageEffectPresets": [],
         "SelectedImageEffectPreset": 0,
         "ColorPickerOptions": {
-          "RecentColorsSelected": true
+          "RecentColorsSelected": false
         },
         "ScreenColorPickerInfoText": ""
       },
@@ -962,7 +962,9 @@
   "ActionsToolbarPosition": "0, 0",
   "ActionsToolbarLockPosition": false,
   "ActionsToolbarStayTopMost": true,
-  "RecentColors": [],
+  "RecentColors": [
+    "0, 0, 0"
+  ],
   "AutoCheckUpdate": true,
   "BinaryUnits": false,
   "ShowMostRecentTaskFirst": false,
