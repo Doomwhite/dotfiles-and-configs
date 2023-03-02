@@ -80,6 +80,7 @@
 	rbd = rebase dev
 	rescue = !git fsck --full --no-reflogs --unreachable --lost-found | grep commit | cut -d\\  -f3 | xargs -n 1 git log -n 1 --pretty=oneline > .git/lost-found.txt
 	rmpo = remote prune origin
+	safe = config --global --add safe.directory
     sm = submodule
     smu = submodule update
 	sh = stash
@@ -119,6 +120,7 @@
 	directory = C:/Projetos/budget-project/budget-api
 	directory = C:/Projetos/budget-project/budget-app
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/.glaze-wm
+	directory = C:\\Users\\adinelson.bruhmuller.MOVTECH\\AppData\\Local\\nvim\\
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

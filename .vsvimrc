@@ -20,7 +20,7 @@
 
 " Global Commands
 	nmap <leader>wa :vsc File.SaveAll<CR>
-	nmap <leader>.e :vsc View.SolutionExplorer<CR>
+	nmap <leader>we :vsc View.SolutionExplorer<CR>
 	nmap <leader>.a :vsc File.SaveAll<CR>
 	nmap <leader>.z :vsc CodeMaid.FindInSolutionExplorer<CR>
 
@@ -42,7 +42,7 @@
 	nmap <leader>ef :vsc Tools.InvokeAceJumpCommand<CR>
 	nnoremap <Leader>ff :vsc Edit.GoToRecentFile<CR>
 	nnoremap <Leader>fs :vsc Edit.GoToSymbol<CR>
-	nnoremap <Leader>ft :vsc Edit.FindInFiles<CR>
+	nnoremap <Leader>ft :vsc Edit.GoToAll<CR>
 	nnoremap <leader>eg :vsc Tools.InvokePeasyMotion<CR>
 	nnoremap <leader>ej :vsc Tools.InvokePeasyMotionJumpToLineBegining<CR>
 	nnoremap <leader>es :vsc Tools.InvokePeasyMotionTwoCharJump<CR>

@@ -382,9 +382,9 @@
           "UseCustomTimeZone": false,
           "CustomTimeZone": {
             "Id": "UTC",
-            "DisplayName": "(UTC) Tempo Universal Coordenado",
-            "StandardName": "Tempo Universal Coordenado",
-            "DaylightName": "Tempo Universal Coordenado",
+            "DisplayName": "(UTC) Coordinated Universal Time",
+            "StandardName": "Coordinated Universal Time",
+            "DaylightName": "Coordinated Universal Time",
             "BaseUtcOffset": "00:00:00",
             "AdjustmentRules": null,
             "SupportsDaylightSavingTime": false

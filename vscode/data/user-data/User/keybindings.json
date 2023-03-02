@@ -448,5 +448,15 @@
         "key": "ctrl+b",
         "when": "editorTextFocus && neovim.init && neovim.mode != insert || neovim.recording",
         "args": "<C-B>"
+    },
+    {
+        "key": "o",
+        "command": "explorer.openAndPassFocus",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-explorer.openAndPassFocus",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
     }
 ]

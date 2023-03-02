@@ -206,7 +206,7 @@
           "TextOutlineOptions": {
             "Font": "Arial",
             "Size": 19,
-            "Color": "0, 0, 0",
+            "Color": "Black",
             "Bold": true,
             "Italic": false,
             "Underline": false,
@@ -963,7 +963,7 @@
   "ActionsToolbarLockPosition": false,
   "ActionsToolbarStayTopMost": true,
   "RecentColors": [
-    "0, 0, 0"
+    "Black"
   ],
   "AutoCheckUpdate": true,
   "BinaryUnits": false,
