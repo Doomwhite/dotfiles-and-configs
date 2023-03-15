@@ -59,9 +59,9 @@ else
 			domain = { DomainName = "local" },
 		},
 		{
-			label = "Zsh",
-			args = { userDirectory .. "scoop/shims/msys2.exe" },
-			cwd = userDirectory,
+			label = "PWSH Supply",
+			args = { userDirectory .. "scoop/shims/pwsh.exe" },
+			cwd = "C:/Projetos/supply-project/supply-app",
 			domain = { DomainName = "local" },
 		},
 		{
@@ -71,9 +71,27 @@ else
 			domain = { DomainName = "local" },
 		},
 		{
+			label = "PWSH BSC",
+			args = { userDirectory .. "scoop/shims/pwsh.exe" },
+			cwd = "C:/Projetos/bsc-project/bsc-app",
+			domain = { DomainName = "local" },
+		},
+		{
 			label = "PWSH Quality",
 			args = { userDirectory .. "scoop/shims/pwsh.exe" },
 			cwd = "C:/Projetos/quality-project/quality-app",
+			domain = { DomainName = "local" },
+		},
+		{
+			label = "Zsh Supply APP",
+			args = { userDirectory .. "scoop/shims/msys2.exe" },
+			cwd = "C:/Projetos/supply-project/supply-app",
+			domain = { DomainName = "local" },
+		},
+		{
+			label = "Zsh Supply API",
+			args = { userDirectory .. "scoop/shims/msys2.exe" },
+			cwd = "C:/Projetos/supply-project/supply-api",
 			domain = { DomainName = "local" },
 		},
 		{
@@ -86,6 +104,18 @@ else
 			label = "Zsh Budget API",
 			args = { userDirectory .. "scoop/shims/msys2.exe" },
 			cwd = "C:/Projetos/budget-project/budget-api",
+			domain = { DomainName = "local" },
+		},
+		{
+			label = "Zsh BSC APP",
+			args = { userDirectory .. "scoop/shims/msys2.exe" },
+			cwd = "C:/Projetos/bsc-project/bsc-app",
+			domain = { DomainName = "local" },
+		},
+		{
+			label = "Zsh BSC API",
+			args = { userDirectory .. "scoop/shims/msys2.exe" },
+			cwd = "C:/Projetos/bsc-project/bsc-api",
 			domain = { DomainName = "local" },
 		},
 		{

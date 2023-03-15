@@ -119,8 +119,11 @@
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/anki
 	directory = C:/Projetos/budget-project/budget-api
 	directory = C:/Projetos/budget-project/budget-app
+	directory = C:/Projetos/supply-project/supply-app
+	directory = C:/Projetos/supply-project/supply-api
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/.glaze-wm
 	directory = C:\\Users\\adinelson.bruhmuller.MOVTECH\\AppData\\Local\\nvim\\
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/wangzq
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

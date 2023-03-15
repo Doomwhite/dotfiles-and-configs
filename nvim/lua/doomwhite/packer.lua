@@ -49,6 +49,7 @@ return require('packer').startup(function(use)
 	use('nvim-treesitter/playground')
 
 	use('tpope/vim-fugitive')
+	use('tpope/vim-repeat')
 
 	use {
 		'tummetott/unimpaired.nvim',
@@ -56,6 +57,9 @@ return require('packer').startup(function(use)
 			require('unimpaired').setup {}
 		end
 	}
+
+
+	-- use { 'neoclide/coc.nvim', run = 'yarn install --frozen-lockfile' }
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
@@ -133,5 +137,40 @@ return require('packer').startup(function(use)
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
+
+	use {
+		"ThePrimeagen/refactoring.nvim",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-treesitter/nvim-treesitter" }
+		}
+	}
+
+	use {
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
+	}
+
+	use {
+		"nvim-neorg/neorg",
+		-- tag = "*",
+		ft = "norg",
+		after = "nvim-treesitter", -- You may want to specify Telescope here as well
+		config = function()
+			require('neorg').setup {
+				load = {
+					["core.defaults"] = {}, -- Loads default behaviour
+					["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
+					["core.norg.dirman"] = { -- Manages Neorg workspaces
+						config = {
+							workspaces = {
+								notes = "~/notes",
+							},
+						},
+					},
+				},
+			}
+		end
 	}
 end)
