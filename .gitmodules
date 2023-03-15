@@ -4,3 +4,6 @@
 [submodule ".glaze-wm"]
 	path = .glaze-wm
 	url = https://github.com/Doomwhite/.glaze-wm.git
+[submodule "komorebi"]
+	path = komorebi
+	url = https://github.com/Doomwhite/komorebi.git
