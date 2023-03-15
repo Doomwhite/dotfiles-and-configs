@@ -1,3 +1,6 @@
 [submodule "nvim"]
 	path = nvim
 	url = https://github.com/Doomwhite/nvim.git
+[submodule ".glaze-wm"]
+	path = .glaze-wm
+	url = https://github.com/Doomwhite/.glaze-wm.git
