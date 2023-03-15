@@ -34,8 +34,8 @@
 	bra = branch -a
 	brl = branch -l
 	brr = branch -r
-    cl = clone
-    clsm = clone --recurse-submodules 
+  cl = clone
+  clsm = clone --recurse-submodules 
 	cg = config
 	cgg = config --global -e
 	cgl = config --local -e
@@ -50,7 +50,7 @@
 	cmadn = commit --amend --no-edit
 	co = checkout
 	cohf = checkout HEAD --
-    cyp = crypt
+  cyp = crypt
 	df = diff
 	dfv = difftool -t vimdiff
 	fe = fetch
@@ -71,8 +71,8 @@
 	ps = push
 	psf = push --force
 	psu = push -u
-    rstm = reset --hard origin/master
-    rstd = reset --hard origin/dev
+  rstm = reset --hard origin/master
+  rstd = reset --hard origin/dev
 	rb = rebase
 	rba = rebase --abort
 	rbc = rebase --continue
@@ -81,8 +81,9 @@
 	rescue = !git fsck --full --no-reflogs --unreachable --lost-found | grep commit | cut -d\\  -f3 | xargs -n 1 git log -n 1 --pretty=oneline > .git/lost-found.txt
 	rmpo = remote prune origin
 	safe = config --global --add safe.directory
-    sm = submodule
-    smu = submodule update
+  sm = submodule
+  sma = submodule add
+  smu = submodule update
 	sh = stash
 	sha = stash apply
 	shc = stash clear
@@ -93,7 +94,7 @@
 	swm = switch master
 	swd = switch dev
 	un = ls-files . --exclude-standard --others
-    rao = remote add origin
+  rao = remote add origin
 [safe]
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/scoop/current
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/versions
