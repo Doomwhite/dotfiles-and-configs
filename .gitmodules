@@ -10,3 +10,6 @@
 [submodule ".yasb"]
 	path = .yasb
 	url = https://github.com/Doomwhite/.yasb.git
+[submodule "wezterm"]
+	path = wezterm
+	url = https://github.com/Doomwhite/wezterm.git
