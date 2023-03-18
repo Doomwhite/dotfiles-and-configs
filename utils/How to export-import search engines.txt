@@ -1,0 +1,14 @@
+1 - Download SQLite browser(I got it from scoop)
+2 - Open the DB Browser for SQLite executable
+3 - Click "Open Database" and select the Web Data from the browser your want to export the search engines(you will probably remove the filter from the explorer selector.).
+4 - Select the "keywords" table and right click the option "Browse table".
+5 - Click the top left option File>Export>Tables(s) as CSV file...
+6 - Select where you want to export the file
+7 - Do the 2-4 step for the Web Data of the browser you want to import the search engines
+8 - Click the top left option File>Export>Tables from CSV file...
+9 - Select the file you exported, it needs to be named "keywords.csv" so that sqlite can actually update the table.
+10 - Confirm the "Import CSV file" input
+11 - Confirm the "There is already a table..." with "Yes to All"
+12 - Click the top left option File>Write Changes
+13 - ...
+14 - Profit
