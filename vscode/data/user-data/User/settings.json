@@ -534,7 +534,8 @@
 	"rust-analyzer.rustfmt.rangeFormatting.enable": true,
 	"explorer.fileNesting.expand": false,
 	"prettier.trailingComma": "none",
-	"prettier.singleAttributePerLine": true
+	"prettier.singleAttributePerLine": true,
+	"html.format.wrapAttributes": "force-aligned"
 	/*"vscode-neovim.neovimExecutablePaths.win32": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe ",
 
 		"vim.leader": "<Space>",
