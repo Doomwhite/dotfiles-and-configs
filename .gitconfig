@@ -84,7 +84,8 @@
   sm = submodule
   sma = submodule add
   smu = submodule update
-  smfor = submodule foreach --recursive
+  smuf = submodule foreach --recursive 'git fetch && git checkout main'
+  smf = submodule foreach --recursive
 	sh = stash
 	sha = stash apply
 	shc = stash clear
