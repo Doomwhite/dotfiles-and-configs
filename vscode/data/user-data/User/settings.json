@@ -322,11 +322,11 @@
 			"commands": [":wa"]
 		},
 		{
-			"before": ["<leader>", "w", "e"],
+			"before": [";", "e"],
 			"commands": ["revealInExplorer"]
 		},
 		{
-			"before": ["Z", "e"],
+			"before": [";", "E"],
 			"commands": ["workbench.action.toggleSidebarVisibility"]
 		},
 		{

@@ -20,7 +20,7 @@
 
 " Global Commands
 	nmap <leader>wa :vsc File.SaveAll<CR>
-	nmap <leader>we :vsc View.SolutionExplorer<CR>
+	nmap ;e :vsc View.SolutionExplorer<CR>
 	nmap <leader>.a :vsc File.SaveAll<CR>
 	nmap <leader>.z :vsc CodeMaid.FindInSolutionExplorer<CR>
 

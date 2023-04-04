@@ -130,6 +130,7 @@
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/wangzq
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/rasa
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/C++/alura-cxx
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Rust/rose-offline
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
