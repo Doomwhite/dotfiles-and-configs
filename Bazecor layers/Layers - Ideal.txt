@@ -1,6 +1,6 @@
--- Keycodes 
+##Keycodes 
 
--- Shift
+#SHIFT
 
 "label": "1",
 "keyCode": 17450,
@@ -23,7 +23,7 @@
 "label": "10",
 "keyCode": 17459,
 
--- Lock
+#LOCK
 
 "label": "1",
 "keyCode": 17492,
@@ -46,7 +46,7 @@
 "label": "10",
 "keyCode": 17501,
 
--- Ideal
+#IDEAL
 
 -- Layer 1 
 Shift: 2>oito, 3>nove, 7>dez, 6>quatro
@@ -87,3 +87,65 @@ Lock:
 -- Layer 7>dez
 Shift: 
 Lock: 1, 8>cinco
+
+#IDEAL COM KEYCODES
+
+-- Layer 1 
+Shift: 2>oito, 3>nove, 7>dez, 6>quatro
+Lock: 5>dois
+Shift(keycode): 17451>17457, 17452>17458, 17456>17459, 17455>17453
+Lock(keycode): 17496>17494
+
+-- Layer 5>dois
+Shift: 2>oito, 7>dez
+Lock: 1, 9>três
+Shift(keycode): 
+Lock(keycode): 
+
+-- Layer 9>três
+Shift: 2>oito, 7>dez
+Lock: 1, 6>quatro
+Shift(keycode): 
+Lock(keycode): 
+
+-- Layer 6>quatro
+Shift: 
+Lock: 1, 8>cinco
+Shift(keycode): 
+Lock(keycode): 
+
+-- Layer 8>cinco
+Shift: 
+Lock: 1, 4>seis
+Shift(keycode): 
+Lock(keycode):
+
+-- Layer 4>seis
+Shift: 
+Lock: 1, 10>sete
+Shift(keycode): 
+Lock(keycode): 
+
+-- Layer 10>sete
+Shift: 
+Lock: 1, 1
+Shift(keycode): 
+Lock(keycode): 
+
+-- Layer 2>oito
+Shift: 2>oito, 3>nove, 7>dez, 6>quatro
+Lock: 1, 9>três, 10>sete
+Shift(keycode): 
+Lock(keycode): 
+
+-- Layer 3>nove
+Shift: 
+Lock: 
+Shift(keycode): 
+Lock(keycode): 
+
+-- Layer 7>dez
+Shift: 
+Lock: 1, 8>cinco
+Shift(keycode): 
+Lock(keycode): 
