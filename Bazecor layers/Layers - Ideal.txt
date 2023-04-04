@@ -1,3 +1,51 @@
+-- Keycodes 
+
+-- Shift
+
+"label": "1",
+"keyCode": 17450,
+"label": "2",
+"keyCode": 17451,
+"label": "3",
+"keyCode": 17452,
+"label": "4",
+"keyCode": 17453,
+"label": "5",
+"keyCode": 17454,
+"label": "6",
+"keyCode": 17455,
+"label": "7",
+"keyCode": 17456,
+"label": "8",
+"keyCode": 17457,
+"label": "9",
+"keyCode": 17458,
+"label": "10",
+"keyCode": 17459,
+
+-- Lock
+
+"label": "1",
+"keyCode": 17492,
+"label": "2",
+"keyCode": 17493,
+"label": "3",
+"keyCode": 17494,
+"label": "4",
+"keyCode": 17495,
+"label": "5",
+"keyCode": 17496,
+"label": "6",
+"keyCode": 17497,
+"label": "7",
+"keyCode": 17498,
+"label": "8",
+"keyCode": 17499,
+"label": "9",
+"keyCode": 17500,
+"label": "10",
+"keyCode": 17501,
+
 -- Ideal
 
 -- Layer 1 
