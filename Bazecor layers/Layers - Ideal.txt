@@ -1,0 +1,41 @@
+-- Ideal
+
+-- Layer 1 
+Shift: 2>oito, 3>nove, 7>dez, 6>quatro
+Lock: 5>dois
+
+-- Layer 5>dois
+Shift: 2>oito, 7>dez
+Lock: 1, 9>três
+
+-- Layer 9>três
+Shift: 2>oito, 7>dez
+Lock: 1, 6>quatro
+
+-- Layer 6>quatro
+Shift: 
+Lock: 1, 8>cinco
+
+-- Layer 8>cinco
+Shift: 
+Lock: 1, 4>seis
+
+-- Layer 4>seis
+Shift: 
+Lock: 1, 10>sete
+
+-- Layer 10>sete
+Shift: 
+Lock: 1, 1
+
+-- Layer 2>oito
+Shift: 2>oito, 3>nove, 7>dez, 6>quatro
+Lock: 1, 9>três, 10>sete
+
+-- Layer 3>nove
+Shift: 
+Lock: 
+
+-- Layer 7>dez
+Shift: 
+Lock: 1, 8>cinco
