@@ -22,3 +22,6 @@
 [submodule "gpg"]
 	path = gpg
 	url = https://github.com/Doomwhite/gpg.git
+[submodule "irfanview"]
+	path = irfanview
+	url = https://github.com/Doomwhite/irfanview.git
