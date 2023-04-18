@@ -37,7 +37,9 @@
 	cg = config
 	cgg = config --global -e
 	cgl = config --local -e
+	cl = clone
 	cldn = clean -dn
+	clsm = clone --recurse-submodules 
 	cm = commit
 	cmad = commit --amend
 	cmadam = commit --amend -a -m
@@ -48,6 +50,7 @@
 	cmm = commit -m
 	co = checkout
 	cohf = checkout HEAD --
+	delall = !git branch | grep -vE \"master|dev\" | xargs git branch -D
 	df = diff
 	dfv = difftool -t vimdiff
 	fe = fetch
@@ -86,8 +89,8 @@
 	swd = switch dev
 	swm = switch master
 	un = ls-files . --exclude-standard --others
-	cl = clone
-	clsm = clone --recurse-submodules 
+	up = !git fetch && git status
+	upmain = !git fetch && git status && git pull origin main
   cyp = crypt
   rao = remote add origin
   rstd = reset --hard origin/dev
@@ -96,8 +99,8 @@
   sma = submodule add
   smf = submodule foreach --recursive
   smu = submodule update
-  smuf = submodule foreach --recursive 'git fetch && git checkout main'
-  smuu = submodule foreach --recursive 'git pull origin main'
+  smfup = submodule foreach --recursive 'git fetch && git checkout main'
+	smfupmain = submodule foreach --recursive 'git fetch && git pull origin main'
 [safe]
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/scoop/current
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/versions
