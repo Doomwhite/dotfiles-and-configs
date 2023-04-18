@@ -19,3 +19,6 @@
 [submodule "alacritty"]
 	path = alacritty
 	url = https://github.com/Doomwhite/alacritty.git
+[submodule "gpg"]
+	path = gpg
+	url = https://github.com/Doomwhite/gpg.git
