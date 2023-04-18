@@ -2,6 +2,5 @@
 "browser-data/Sidekick/User Data/Default/History" filter=git-crypt diff=git-crypt
 "browser-data/opera-gx/profile/data/Web Data" filter=git-crypt diff=git-crypt
 "browser-data/opera-gx/profile/data/History" filter=git-crypt diff=git-crypt
-irfanview/*.ini filter=git-crypt diff=git-crypt
 pcsx2-dev/bios/** filter=git-crypt diff=git-crypt
 sharex/ShareX/History.json filter=git-crypt diff=git-crypt
