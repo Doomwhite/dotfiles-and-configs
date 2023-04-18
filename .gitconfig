@@ -91,6 +91,8 @@
 	un = ls-files . --exclude-standard --others
 	up = !git fetch && git status
 	upmain = !git fetch && git status && git pull origin main
+	uphome = !git fetch && git status && git pull origin home
+	upwork = !git fetch && git status && git pull origin work
   cyp = crypt
   rao = remote add origin
   rstd = reset --hard origin/dev
