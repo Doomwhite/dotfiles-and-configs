@@ -25,3 +25,6 @@
 [submodule "irfanview"]
 	path = irfanview
 	url = https://github.com/Doomwhite/irfanview.git
+[submodule "pcsx2"]
+	path = pcsx2
+	url = https://github.com/Doomwhite/pcsx2.git
