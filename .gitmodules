@@ -28,3 +28,6 @@
 [submodule "pcsx2"]
 	path = pcsx2
 	url = https://github.com/Doomwhite/pcsx2.git
+[submodule "lf"]
+	path = lf
+	url = https://github.com/Doomwhite/lf.git
