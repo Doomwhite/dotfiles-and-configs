@@ -91,6 +91,8 @@
 	un = ls-files . --exclude-standard --others
 	up = !git fetch && git status
 	upmain = !git fetch && git status && git pull origin main
+	updev = !git fetch && git status && git pull origin dev
+	upmaster = !git fetch && git status && git pull origin master
 	uphome = !git fetch && git status && git pull origin home
 	upwork = !git fetch && git status && git pull origin work
   cyp = crypt
@@ -101,8 +103,12 @@
   sma = submodule add
   smf = submodule foreach --recursive
   smu = submodule update
-  smfup = submodule foreach --recursive 'git fetch && git checkout main'
-	smfupmain = submodule foreach --recursive 'git fetch && git pull origin main'
+  smfup = submodule foreach --recursive 'git fetch && git status'
+	smfupmain = submodule foreach --recursive 'git fetch && git checkout main'
+	smfupdev = submodule foreach --recursive 'git fetch && git checkout dev'
+	smfupmaster = submodule foreach --recursive 'git fetch && git checkout master'
+	smfuphome = submodule foreach --recursive 'git fetch && git checkout home'
+	smfupwork = submodule foreach --recursive 'git fetch && git checkout work'
 [safe]
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/scoop/current
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/versions
