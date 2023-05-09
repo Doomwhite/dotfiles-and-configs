@@ -53,6 +53,7 @@
 
 " Go To
 	nmap gi :vsc Edit.GoToImplementation<CR>
+	nmap gh :vsc Edit.QuickInfo<CR>
 	nmap gr :vsc Edit.FindAllReferences<CR>
 	nmap gp :vsc Edit.PeekDefinition<CR>
 	nmap gq :vsc View.QuickActionsForPosition<CR>

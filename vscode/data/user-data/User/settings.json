@@ -555,7 +555,10 @@
   "prettier.trailingComma": "none",
   "prettier.singleAttributePerLine": true,
   "html.format.wrapAttributes": "force-aligned",
-  "editor.cursorSurroundingLines": 15
+  "editor.cursorSurroundingLines": 15,
+  "projectManager.git.baseFolders": ["bsc"],
+  "todohighlight.isEnable": true,
+  "todohighlight.include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.html", "**/*.php", "**/*.css", "**/*.scss"]
   /*"vscode-neovim.neovimExecutablePaths.win32": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe ",
 
 		"vim.leader": "<Space>",
