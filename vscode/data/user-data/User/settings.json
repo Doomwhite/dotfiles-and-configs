@@ -558,7 +558,18 @@
   "editor.cursorSurroundingLines": 15,
   "projectManager.git.baseFolders": ["bsc"],
   "todohighlight.isEnable": true,
-  "todohighlight.include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.html", "**/*.php", "**/*.css", "**/*.scss"]
+"todohighlight.include": [
+	"**/*.js",
+	"**/*.jsx",
+	"**/*.ts",
+	"**/*.tsx",
+	"**/*.html",
+	"**/*.php",
+	"**/*.css",
+	"**/*.scss"
+],
+"vscode-devtools-for-chrome.chromePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\opera-gx\\98.0.4759.22\\98.0.4759.22\\opera.exe",
+"vscode-devtools-for-chrome.port": 4200
   /*"vscode-neovim.neovimExecutablePaths.win32": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe ",
 
 		"vim.leader": "<Space>",
