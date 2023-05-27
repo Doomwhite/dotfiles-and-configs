@@ -49,6 +49,17 @@
 #IDEAL
 
 -- Layer 1 
+-- Layer 5>dois
+-- Layer 9>três
+-- Layer 6>quatro
+-- Layer 8>cinco
+-- Layer 4>seis
+-- Layer 10>sete
+-- Layer 2>oito
+-- Layer 3>nove
+-- Layer 7>dez
+
+-- Layer 1 
 Shift: 2>oito, 3>nove, 7>dez, 6>quatro
 Lock: 5>dois
 

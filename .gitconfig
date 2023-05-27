@@ -104,11 +104,16 @@
   smf = submodule foreach --recursive
   smu = submodule update
   smfup = submodule foreach --recursive 'git fetch && git status'
-	smfupmain = submodule foreach --recursive 'git fetch && git checkout main'
-	smfupdev = submodule foreach --recursive 'git fetch && git checkout dev'
-	smfupmaster = submodule foreach --recursive 'git fetch && git checkout master'
-	smfuphome = submodule foreach --recursive 'git fetch && git checkout home'
-	smfupwork = submodule foreach --recursive 'git fetch && git checkout work'
+	smfupmain = submodule foreach --recursive 'git fetch && git pull origin main'
+	smfupdev = submodule foreach --recursive 'git fetch && git pull origin dev'
+	smfupmaster = submodule foreach --recursive 'git fetch && git pull origin master'
+	smfuphome = submodule foreach --recursive 'git fetch && git pull origin home'
+	smfupwork = submodule foreach --recursive 'git fetch && git pull origin work'
+	smfcomain = submodule foreach --recursive 'git fetch && git checkout main'
+	smfcodev = submodule foreach --recursive 'git fetch && git checkout dev'
+	smfcomaster = submodule foreach --recursive 'git fetch && git checkout master'
+	smfcohome = submodule foreach --recursive 'git fetch && git checkout home'
+	smfcowork = submodule foreach --recursive 'git fetch && git checkout work'
 [safe]
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/scoop/current
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/versions
