@@ -1,6 +1,7 @@
 " Variables
    let mapleader="\<Space>"
    set clipboard=unnamed
+   set scrolloff=12
    set smartcase
 	 set ignorecase
 	 set incsearch
@@ -15,8 +16,10 @@
   inoremap jk <ESC>
   inoremap jj <ESC>
 
-	nmap <C-u> 15<C-y>15k
-	nmap <C-d> 15<C-e>15j
+	nmap <C-u> 15k
+	nmap <C-d> 15j
+	vmap <C-u> 15k
+	vmap <C-d> 15j
 
 " Global Commands
 	nmap <leader>wa :vsc File.SaveAll<CR>
@@ -50,6 +53,7 @@
 
 " Go To
 	nmap gi :vsc Edit.GoToImplementation<CR>
+	nmap gh :vsc Edit.QuickInfo<CR>
 	nmap gr :vsc Edit.FindAllReferences<CR>
 	nmap gp :vsc Edit.PeekDefinition<CR>
 	nmap gq :vsc View.QuickActionsForPosition<CR>

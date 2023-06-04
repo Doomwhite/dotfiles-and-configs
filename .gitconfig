@@ -71,6 +71,14 @@
 	ps = push
 	psf = push --force
 	psu = push -u
+	psup = "!f() { \
+        current_branch=$(git rev-parse --abbrev-ref HEAD); \
+        remote_branch=\"$current_branch\"; \
+        if ! git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then \
+            remote_branch=\"--set-upstream origin $current_branch\"; \
+        fi; \
+        git push $remote_branch; \
+    }; f"
 	rb = rebase
 	rba = rebase --abort
 	rbc = rebase --continue
@@ -90,6 +98,7 @@
 	swm = switch master
 	un = ls-files . --exclude-standard --others
 	up = !git fetch && git status
+	uppl = !git fetch && git status && git pull
 	upmain = !git fetch && git status && git pull origin main
 	updev = !git fetch && git status && git pull origin dev
 	upmaster = !git fetch && git status && git pull origin master
@@ -103,6 +112,7 @@
   sma = submodule add
   smf = submodule foreach --recursive
   smu = submodule update
+  smfuppl = submodule foreach --recursive 'git fetch && git status && git pull'
   smfup = submodule foreach --recursive 'git fetch && git status'
 	smfupmain = submodule foreach --recursive 'git fetch && git pull origin main'
 	smfupdev = submodule foreach --recursive 'git fetch && git pull origin dev'
@@ -148,6 +158,8 @@
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/C++/alura-cxx
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Rust/rose-offline
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/gpg
+	directory = C:/Projetos/sales-project/sales-app
+	directory = C:/Projetos/sales-project/sales-api
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
