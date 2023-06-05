@@ -569,7 +569,8 @@
 	"**/*.scss"
 ],
 "vscode-devtools-for-chrome.chromePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\opera-gx\\98.0.4759.22\\98.0.4759.22\\opera.exe",
-"vscode-devtools-for-chrome.port": 4200
+"vscode-devtools-for-chrome.port": 4200,
+"rust-analyzer.server.path": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\apps\\rustup\\current\\.cargo\\bin\\rust-analyzer.exe"
   /*"vscode-neovim.neovimExecutablePaths.win32": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe ",
 
 		"vim.leader": "<Space>",
