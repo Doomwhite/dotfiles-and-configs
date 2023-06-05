@@ -31,3 +31,6 @@
 [submodule "lf"]
 	path = lf
 	url = https://github.com/Doomwhite/lf.git
+[submodule "vscode"]
+	path = vscode
+	url = https://github.com/Doomwhite/vscode.git
