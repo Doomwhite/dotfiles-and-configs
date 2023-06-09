@@ -34,3 +34,6 @@
 [submodule "vscode"]
 	path = vscode
 	url = https://github.com/Doomwhite/vscode.git
+[submodule "spacemacs"]
+	path = spacemacs
+	url = https://github.com/Doomwhite/spacemacs.git
