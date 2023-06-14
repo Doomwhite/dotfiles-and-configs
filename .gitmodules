@@ -37,3 +37,6 @@
 [submodule "spacemacs"]
 	path = spacemacs
 	url = https://github.com/Doomwhite/spacemacs.git
+[submodule ".wsl"]
+	path = .wsl
+	url = https://github.com/Doomwhite/.wsl.git
