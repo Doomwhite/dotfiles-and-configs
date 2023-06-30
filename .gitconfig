@@ -161,6 +161,7 @@
 	directory = C:/Projetos/sales-project/sales-app
 	directory = C:/Projetos/sales-project/sales-api
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/.local/share/chezmoi
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/vscode
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
