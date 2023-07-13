@@ -162,6 +162,8 @@
 	directory = C:/Projetos/sales-project/sales-api
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/.local/share/chezmoi
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/vscode
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Zig/advent_of_code_zig_2022
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Zig/ziglings
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
