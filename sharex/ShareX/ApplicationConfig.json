@@ -253,7 +253,7 @@
         },
         "LastRegionTool": "RegionRectangle",
         "LastAnnotationTool": "ToolSelect",
-        "LastEditorTool": "DrawingTextOutline",
+        "LastEditorTool": "DrawingRectangle",
         "ImageEditorStartMode": "AutoSize",
         "ImageEditorWindowState": {
           "Location": "0, 0",
@@ -963,6 +963,7 @@
   "ActionsToolbarLockPosition": false,
   "ActionsToolbarStayTopMost": true,
   "RecentColors": [
+    "242, 60, 60",
     "Black"
   ],
   "AutoCheckUpdate": true,
