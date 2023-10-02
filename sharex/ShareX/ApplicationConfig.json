@@ -589,7 +589,7 @@
   "TaskbarProgressEnabled": true,
   "UseWhiteShareXIcon": false,
   "RememberMainFormPosition": false,
-  "MainFormPosition": "610, 445",
+  "MainFormPosition": "530, 265",
   "RememberMainFormSize": false,
   "MainFormSize": "860, 525",
   "TrayLeftClickAction": "RectangleRegion",
@@ -820,38 +820,6 @@
   "HistoryCheckURL": false,
   "RecentTasks": [
     {
-      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-04\\opera_PHpDX3LDpI.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2023-04-14T20:32:37.7617971Z"
-    },
-    {
-      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-04\\opera_Pl3TQY5GUC.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2023-04-14T20:32:57.3280873Z"
-    },
-    {
-      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-04\\opera_iXg2CqilWC.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2023-04-14T20:33:10.4851377Z"
-    },
-    {
-      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-04\\opera_Ze3T7BcNnM.png",
-      "URL": null,
-      "ThumbnailURL": null,
-      "DeletionURL": null,
-      "ShortenedURL": null,
-      "Time": "2023-04-14T20:33:25.3457454Z"
-    },
-    {
       "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-04\\opera_z5VUXmASU5.png",
       "URL": null,
       "ThumbnailURL": null,
@@ -898,6 +866,38 @@
       "DeletionURL": null,
       "ShortenedURL": null,
       "Time": "2023-06-26T12:46:26.6677164Z"
+    },
+    {
+      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-07\\opera_lqxdBo9vnc.png",
+      "URL": "https://i.imgur.com/XW9LVPN.png",
+      "ThumbnailURL": "https://i.imgur.com/XW9LVPNm.jpg",
+      "DeletionURL": "https://imgur.com/delete/w4J5sm3ghugoI5Z",
+      "ShortenedURL": null,
+      "Time": "2023-07-31T11:57:59.1115679Z"
+    },
+    {
+      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-07\\opera_hCLXPyzVjS.png",
+      "URL": "https://i.imgur.com/7Rymf25.png",
+      "ThumbnailURL": "https://i.imgur.com/7Rymf25m.jpg",
+      "DeletionURL": "https://imgur.com/delete/2hoEJJL5EVYCz59",
+      "ShortenedURL": null,
+      "Time": "2023-07-31T11:58:08.7441235Z"
+    },
+    {
+      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-09\\devenv_nsKue6mmWp.png",
+      "URL": null,
+      "ThumbnailURL": null,
+      "DeletionURL": null,
+      "ShortenedURL": null,
+      "Time": "2023-09-06T14:43:50.6153863Z"
+    },
+    {
+      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-10\\opera_rBE1yHMzD8.png",
+      "URL": null,
+      "ThumbnailURL": null,
+      "DeletionURL": null,
+      "ShortenedURL": null,
+      "Time": "2023-10-02T18:06:12.6266245Z"
     }
   ],
   "RecentTasksSave": true,

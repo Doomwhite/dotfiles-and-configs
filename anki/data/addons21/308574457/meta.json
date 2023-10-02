@@ -1,1 +1,1 @@
-{"homepage": "https://github.com/shirajuki/anki-redesign", "conflicts": ["308574457", "688199788"], "name": "Anki-redesign", "mod": 1675536192, "min_point_version": 20, "max_point_version": 57, "branch_index": 0, "disabled": true, "update_enabled": true}
+{"name": "Anki-redesign", "conflicts": ["308574457", "688199788"], "homepage": "https://github.com/shirajuki/anki-redesign", "mod": 1675536192, "min_point_version": 20, "max_point_version": 57, "branch_index": 0, "disabled": true, "update_enabled": true}

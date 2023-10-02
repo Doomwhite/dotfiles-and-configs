@@ -44,6 +44,7 @@
 	cmad = commit --amend
 	cmadam = commit --amend -a -m
 	cmadan = commit --amend -a --no-edit
+	cmadpn = commit --amend -p --no-edit
 	cmadm = commit --amend -m
 	cmadn = commit --amend --no-edit
 	cmam = commit -a -m
@@ -165,6 +166,11 @@
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Zig/advent_of_code_zig_2022
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Zig/ziglings
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/C++/forgottenserver
+	directory = C:/Projetos/sales-project/SalesIntegrationContracts
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Nextcloud/Notes
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/qownnotes/5104/Data/Notes
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/qownnotes/5104/Data
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/qownnotes/current/Data
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

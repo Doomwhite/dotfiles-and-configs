@@ -1,0 +1,31 @@
+{
+    "audioFieldAddMode": "append",
+    "skipExistingBulkAdd": true,
+    "playAudioAfterSingleAddAutomaticSelection": true,
+    "replaceCharacters": [
+        "\u30fb",
+        "~",
+        "\u3002",
+        "."
+    ],
+    "configVersion": "1.0.7",
+    "skipOggFallback": false,
+    "noteTypeSpecific": [
+        {
+            "id": 1492824256651,
+            "searchField": "front",
+            "audioField": "Audio"
+        },
+        {
+            "id": 1676226553365,
+            "searchField": "Audio",
+            "audioField": "Audio"
+        }
+    ],
+    "deckSpecific": [
+        {
+            "id": 1629782188047,
+            "language": "ja"
+        }
+    ]
+}

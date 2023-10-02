@@ -1,0 +1,172 @@
+Windows fatal exception: access violation
+
+Thread 0x000008c8 (most recent call first):
+  File "selectors.py", line 314 in _select
+  File "selectors.py", line 323 in select
+  File "socketserver.py", line 236 in serve_forever
+  File "aqt\mediasrv.py", line 60 in run
+  File "threading.py", line 916 in _bootstrap_inner
+  File "threading.py", line 884 in _bootstrap
+
+Current thread 0x00001df8 (most recent call first):
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\2091361802\reviewer_progress_bar.py", line 129 in nmc
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\2091361802\reviewer_progress_bar.py", line 278 in _renderBar
+  File "anki\hooks.py", line 29 in runHook
+  File "aqt\main.py", line 488 in moveToState
+  File "anki\hooks.py", line 65 in repl
+  File "anki\hooks.py", line 74 in decorator_wrapper
+  File "<decorator-gen-34>", line 2 in moveToState
+  File "aqt\main.py", line 535 in reset
+  File "aqt\preferences.py", line 40 in accept
+  File "aqt\preferences.py", line 45 in reject
+  File "aqt\__init__.py", line 364 in _run
+  File "aqt\__init__.py", line 276 in run
+  File "runanki", line 4 in <module>
+Windows fatal exception: code 0x8001010d
+
+Thread 0x00003a78 (most recent call first):
+  File "selectors.py", line 314 in _select
+  File "selectors.py", line 323 in select
+  File "socketserver.py", line 236 in serve_forever
+  File "aqt\mediasrv.py", line 60 in run
+  File "threading.py", line 916 in _bootstrap_inner
+  File "threading.py", line 884 in _bootstrap
+
+Current thread 0x00002bb8 (most recent call first):
+  File "aqt\__init__.py", line 364 in _run
+  File "aqt\__init__.py", line 276 in run
+  File "runanki", line 4 in <module>
+Windows fatal exception: access violation
+
+Thread 0x000036a4 (most recent call first):
+  File "selectors.py", line 314 in _select
+  File "selectors.py", line 323 in select
+  File "socketserver.py", line 236 in serve_forever
+  File "aqt\mediasrv.py", line 60 in run
+  File "threading.py", line 916 in _bootstrap_inner
+  File "threading.py", line 884 in _bootstrap
+
+Current thread 0x00003128 (most recent call first):
+  File "aqt\utils.py", line 299 in getSaveFile
+  File "aqt\exporting.py", line 104 in accept
+  File "aqt\exporting.py", line 26 in __init__
+  File "aqt\main.py", line 912 in onExport
+  File "aqt\deckbrowser.py", line 222 in _export
+  File "aqt\deckbrowser.py", line 215 in <lambda>
+  File "aqt\deckbrowser.py", line 219 in _showOptions
+  File "aqt\deckbrowser.py", line 44 in _linkHandler
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\877182321\column.py", line 16 in _linkHandler
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\review_heatmap\links.py", line 74 in heatmapLinkHandler
+  File "anki\hooks.py", line 71 in repl
+  File "anki\hooks.py", line 74 in decorator_wrapper
+  File "<decorator-gen-18>", line 2 in _linkHandler
+  File "aqt\webview.py", line 368 in _onBridgeCmd
+  File "aqt\webview.py", line 87 in _onCmd
+  File "aqt\webview.py", line 27 in cmd
+  File "aqt\__init__.py", line 364 in _run
+  File "aqt\__init__.py", line 276 in run
+  File "runanki", line 4 in <module>
+Windows fatal exception: access violation
+
+Thread 0x000036a4 (most recent call first):
+  File "selectors.py", line 314 in _select
+  File "selectors.py", line 323 in select
+  File "socketserver.py", line 236 in serve_forever
+  File "aqt\mediasrv.py", line 60 in run
+  File "threading.py", line 916 in _bootstrap_inner
+  File "threading.py", line 884 in _bootstrap
+
+Current thread 0x00003128 (most recent call first):
+  File "aqt\utils.py", line 299 in getSaveFile
+  File "aqt\exporting.py", line 104 in accept
+  File "aqt\exporting.py", line 26 in __init__
+  File "aqt\main.py", line 912 in onExport
+  File "aqt\deckbrowser.py", line 222 in _export
+  File "aqt\deckbrowser.py", line 215 in <lambda>
+  File "aqt\deckbrowser.py", line 219 in _showOptions
+  File "aqt\deckbrowser.py", line 44 in _linkHandler
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\877182321\column.py", line 16 in _linkHandler
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\review_heatmap\links.py", line 74 in heatmapLinkHandler
+  File "anki\hooks.py", line 71 in repl
+  File "anki\hooks.py", line 74 in decorator_wrapper
+  File "<decorator-gen-18>", line 2 in _linkHandler
+  File "aqt\webview.py", line 368 in _onBridgeCmd
+  File "aqt\webview.py", line 87 in _onCmd
+  File "aqt\webview.py", line 27 in cmd
+  File "aqt\__init__.py", line 364 in _run
+  File "aqt\__init__.py", line 276 in run
+  File "runanki", line 4 in <module>
+Windows fatal exception: access violation
+
+Thread 0x000045bc (most recent call first):
+  File "selectors.py", line 314 in _select
+  File "selectors.py", line 323 in select
+  File "socketserver.py", line 236 in serve_forever
+  File "aqt\mediasrv.py", line 60 in run
+  File "threading.py", line 916 in _bootstrap_inner
+  File "threading.py", line 884 in _bootstrap
+
+Current thread 0x000023ac (most recent call first):
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\1496166067\stylers.py", line 103 in css
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\1496166067\stylers.py", line 59 in replace_attributes
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\1496166067\night_mode.py", line 94 in replace
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\1496166067\night_mode.py", line 170 in on
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\1496166067\night_mode.py", line 193 in refresh
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\1496166067\night_mode.py", line 157 in load
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\1496166067\__init__.py", line 12 in delayedLoader
+  File "aqt\progress.py", line 72 in handler
+  File "aqt\update.py", line 66 in askAndUpdate
+  File "aqt\main.py", line 975 in newVerAvail
+  File "aqt\__init__.py", line 364 in _run
+  File "aqt\__init__.py", line 276 in run
+  File "runanki", line 4 in <module>
+Windows fatal exception: access violation
+
+Thread 0x00003a1c (most recent call first):
+  File "selectors.py", line 314 in _select
+  File "selectors.py", line 323 in select
+  File "socketserver.py", line 236 in serve_forever
+  File "aqt\mediasrv.py", line 60 in run
+  File "threading.py", line 916 in _bootstrap_inner
+  File "threading.py", line 884 in _bootstrap
+
+Current thread 0x00004274 (most recent call first):
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\1496166067\stylers.py", line 103 in css
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\1496166067\stylers.py", line 59 in replace_attributes
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\1496166067\night_mode.py", line 94 in replace
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\1496166067\night_mode.py", line 170 in on
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\1496166067\night_mode.py", line 193 in refresh
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\1496166067\night_mode.py", line 157 in load
+  File "C:\Users\Cliente\AppData\Roaming\Anki2\addons21\1496166067\__init__.py", line 12 in delayedLoader
+  File "aqt\progress.py", line 72 in handler
+  File "aqt\update.py", line 66 in askAndUpdate
+  File "aqt\main.py", line 975 in newVerAvail
+  File "aqt\__init__.py", line 364 in _run
+  File "aqt\__init__.py", line 276 in run
+  File "runanki", line 4 in <module>
+Windows fatal exception: access violation
+
+Thread 0x00001ee0 (most recent call first):
+  File "threading.py", line 306 in wait
+  File "queue.py", line 179 in get
+  File "aqt\mpv.py", line 367 in _get_event
+  File "aqt\mpv.py", line 511 in _event_reader
+  File "threading.py", line 870 in run
+  File "threading.py", line 932 in _bootstrap_inner
+  File "threading.py", line 890 in _bootstrap
+
+Current thread 0x00001450 (most recent call first):
+<no Python frame>
+Windows fatal exception: access violation
+
+Thread 0x00005f74 (most recent call first):
+  File "threading.py", line 306 in wait
+  File "queue.py", line 179 in get
+  File "aqt\mpv.py", line 363 in _get_event
+  File "aqt\mpv.py", line 502 in _event_reader
+  File "threading.py", line 870 in run
+  File "threading.py", line 932 in _bootstrap_inner
+  File "threading.py", line 890 in _bootstrap
+
+Current thread 0x00005bac (most recent call first):
+<no Python frame>
