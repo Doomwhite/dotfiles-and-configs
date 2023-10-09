@@ -41,8 +41,11 @@
 	cldn = clean -dn
 	clsm = clone --recurse-submodules 
 	cm = commit
+	cmp = commit -p
+	cmpm = commit -p -m
 	cmad = commit --amend
 	cmadam = commit --amend -a -m
+	cmadpm = commit --amend -p -m
 	cmadan = commit --amend -a --no-edit
 	cmadpn = commit --amend -p --no-edit
 	cmadm = commit --amend -m
