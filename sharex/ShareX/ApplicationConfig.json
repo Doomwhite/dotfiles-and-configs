@@ -589,9 +589,9 @@
   "TaskbarProgressEnabled": true,
   "UseWhiteShareXIcon": false,
   "RememberMainFormPosition": false,
-  "MainFormPosition": "530, 265",
+  "MainFormPosition": "481, 374",
   "RememberMainFormSize": false,
-  "MainFormSize": "860, 525",
+  "MainFormSize": "860, 541",
   "TrayLeftClickAction": "RectangleRegion",
   "TrayLeftDoubleClickAction": "OpenMainWindow",
   "TrayMiddleClickAction": "ClipboardUploadWithContentViewer",
@@ -820,84 +820,84 @@
   "HistoryCheckURL": false,
   "RecentTasks": [
     {
-      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-04\\opera_z5VUXmASU5.png",
+      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-11\\opera_rmeydL84Qm.gif",
       "URL": null,
       "ThumbnailURL": null,
       "DeletionURL": null,
       "ShortenedURL": null,
-      "Time": "2023-04-14T20:33:44.7248507Z"
+      "Time": "2023-11-14T15:00:36.5857378Z"
     },
     {
-      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-04\\opera_NAwKI7GOGv.png",
+      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-11\\opera_MqCjYQFlqK.gif",
       "URL": null,
       "ThumbnailURL": null,
       "DeletionURL": null,
       "ShortenedURL": null,
-      "Time": "2023-04-14T20:34:09.111302Z"
+      "Time": "2023-11-17T19:04:08.8325585Z"
     },
     {
-      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-04\\opera_3sv0FYo1T9.png",
+      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-11\\opera_VYIsZZkZQw.gif",
       "URL": null,
       "ThumbnailURL": null,
       "DeletionURL": null,
       "ShortenedURL": null,
-      "Time": "2023-04-14T20:34:34.0506507Z"
+      "Time": "2023-11-17T19:04:28.8068051Z"
     },
     {
-      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-06\\Code_E1a0bjaBk5.png",
+      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-11\\opera_Im2Vrqi3KO.gif",
       "URL": null,
       "ThumbnailURL": null,
       "DeletionURL": null,
       "ShortenedURL": null,
-      "Time": "2023-06-26T12:46:04.4860553Z"
+      "Time": "2023-11-17T19:10:19.9559146Z"
     },
     {
-      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-06\\Code_XrjQCddprG.png",
+      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-11\\opera_bCDYhgcbVd.gif",
       "URL": null,
       "ThumbnailURL": null,
       "DeletionURL": null,
       "ShortenedURL": null,
-      "Time": "2023-06-26T12:46:18.8647956Z"
+      "Time": "2023-11-17T19:11:12.9462541Z"
     },
     {
-      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-06\\Code_pkqGOa1L2A.png",
+      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-11\\opera_IyPg7YvoRJ.gif",
       "URL": null,
       "ThumbnailURL": null,
       "DeletionURL": null,
       "ShortenedURL": null,
-      "Time": "2023-06-26T12:46:26.6677164Z"
+      "Time": "2023-11-17T19:15:19.6407134Z"
     },
     {
-      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-07\\opera_lqxdBo9vnc.png",
-      "URL": "https://i.imgur.com/XW9LVPN.png",
-      "ThumbnailURL": "https://i.imgur.com/XW9LVPNm.jpg",
-      "DeletionURL": "https://imgur.com/delete/w4J5sm3ghugoI5Z",
-      "ShortenedURL": null,
-      "Time": "2023-07-31T11:57:59.1115679Z"
-    },
-    {
-      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-07\\opera_hCLXPyzVjS.png",
-      "URL": "https://i.imgur.com/7Rymf25.png",
-      "ThumbnailURL": "https://i.imgur.com/7Rymf25m.jpg",
-      "DeletionURL": "https://imgur.com/delete/2hoEJJL5EVYCz59",
-      "ShortenedURL": null,
-      "Time": "2023-07-31T11:58:08.7441235Z"
-    },
-    {
-      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-09\\devenv_nsKue6mmWp.png",
+      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-11\\opera_lVGLWgx3Fa.gif",
       "URL": null,
       "ThumbnailURL": null,
       "DeletionURL": null,
       "ShortenedURL": null,
-      "Time": "2023-09-06T14:43:50.6153863Z"
+      "Time": "2023-11-17T19:16:53.4487161Z"
     },
     {
-      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-10\\opera_rBE1yHMzD8.png",
+      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-11\\opera_Z8ZxVovQu6.gif",
       "URL": null,
       "ThumbnailURL": null,
       "DeletionURL": null,
       "ShortenedURL": null,
-      "Time": "2023-10-02T18:06:12.6266245Z"
+      "Time": "2023-11-17T19:17:52.2712379Z"
+    },
+    {
+      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-11\\opera_KvoIuhTXDD.gif",
+      "URL": null,
+      "ThumbnailURL": null,
+      "DeletionURL": null,
+      "ShortenedURL": null,
+      "Time": "2023-11-17T19:20:19.5232148Z"
+    },
+    {
+      "FilePath": "C:\\Users\\adinelson.bruhmuller.MOVTECH\\scoop\\apps\\sharex\\current\\ShareX\\Screenshots\\2023-11\\opera_9YlxbyscnQ.gif",
+      "URL": null,
+      "ThumbnailURL": null,
+      "DeletionURL": null,
+      "ShortenedURL": null,
+      "Time": "2023-11-17T19:26:50.1024397Z"
     }
   ],
   "RecentTasksSave": true,
@@ -949,7 +949,7 @@
   "AutoCaptureRepeatTime": 60.0,
   "AutoCaptureMinimizeToTray": true,
   "AutoCaptureWaitUpload": true,
-  "ScreenRecordRegion": "816, 649, 158, 26",
+  "ScreenRecordRegion": "41, 101, 1879, 939",
   "ActionsToolbarList": [
     "RectangleRegion",
     "PrintScreen",
