@@ -128,6 +128,7 @@
 	smfcomaster = submodule foreach --recursive 'git fetch && git checkout master'
 	smfcohome = submodule foreach --recursive 'git fetch && git checkout home'
 	smfcowork = submodule foreach --recursive 'git fetch && git checkout work'
+	addf = "!f() { git add --intent-to-add \"$1\" && git update-index --skip-worktree \"$1\"; }; f"
 [safe]
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/scoop/current
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/versions
