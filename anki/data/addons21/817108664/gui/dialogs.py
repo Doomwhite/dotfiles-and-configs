@@ -22,18 +22,30 @@ import math
 
 from typing import TYPE_CHECKING, Dict, List, Optional, Type, Union
 
-from PyQt5.QtCore import QEventLoop, QSize, QThread, pyqtSignal, pyqtSlot
-from PyQt5.QtWidgets import QApplication, QDialog, QProgressDialog
-
-# import the main window object (mw) from aqt
+from aqt.qt import (
+    QEventLoop,
+    QSize,
+    QThread,
+    pyqtSignal,
+    pyqtSlot,
+    Qt,
+    QApplication,
+    QDialog,
+    QProgressDialog,
+    QDialogButtonBox,
+    QVBoxLayout,
+    QLabel,
+)
 import aqt
-from aqt.main import AnkiQt
 from aqt.utils import restoreGeom, saveGeom, showInfo, tooltip, openLink
+
+if TYPE_CHECKING:
+    from aqt.main import AnkiQt
 
 from .._version import __version__
 from ..collection_simulator import CollectionSimulator
 from ..review_simulator import ReviewSimulator
-from .forms.anki21 import (
+from .forms import (
     about_dialog,
     anki_simulator_dialog,
     manual_dialog,
@@ -95,18 +107,16 @@ class SimulatorDialog(QDialog):
         self.setupGraph()
         self.deckChooser = aqt.deckchooser.DeckChooser(self.mw, self.dialog.deckChooser)
         if deck_id is not None:
-            if hasattr(self.deckChooser, 'selected_deck_id'): # Anki >= 2.1.45
-                self.deckChooser.selected_deck_id = deck_id
-            else:
-                deck_name = self.mw.col.decks.nameOrNone(deck_id)
-                if deck_name:
-                    self.deckChooser.setDeckName(deck_name)
+            self.deckChooser.selected_deck_id = deck_id
         self.dialog.simulateButton.clicked.connect(self.simulate)
         self.dialog.loadDeckConfigurationsButton.clicked.connect(
             self.loadDeckConfigurations
         )
         self.dialog.clearLastSimulationButton.clicked.connect(
             self.clear_last_simulation
+        )
+        self.dialog.clearAllSimulationButton.clicked.connect(
+            self.clear_all_simulation
         )
         self.dialog.aboutButton.clicked.connect(self.showAboutDialog)
         self.dialog.manualButton.clicked.connect(self.showManual)
@@ -117,7 +127,7 @@ class SimulatorDialog(QDialog):
         self.dialog.simulateAdditionalNewCardsCheckbox.toggled.connect(
             self.toggledGenerateAdditionalCardsCheckbox
         )
-        self.schedVersion = self.mw.col.schedVer()
+        self.schedVersion = self.mw.col.sched_ver()
         self.config = self.mw.addonManager.getConfig(__name__)
         self.dialog.daysToSimulateSpinbox.setProperty(
             "value", self.config["default_days_to_simulate"]
@@ -134,36 +144,26 @@ class SimulatorDialog(QDialog):
         self._progress = None
 
     def _setupHooks(self):
-        try:  # 2.1.20+
-            from aqt.gui_hooks import profile_will_close
+        from aqt.gui_hooks import profile_will_close
 
-            profile_will_close.append(self.close)
-        except (ImportError, ModuleNotFoundError):
-            from anki.hooks import addHook
-
-            addHook("unloadProfile", self.close)
+        profile_will_close.append(self.close)
 
     def _tearDownHooks(self):
-        try:  # 2.1.20+
-            from aqt.gui_hooks import profile_will_close
+        from aqt.gui_hooks import profile_will_close
 
-            profile_will_close.remove(self.close)
-        except (ImportError, ModuleNotFoundError):
-            from anki.hooks import remHook
-
-            remHook("unloadProfile", self.close)
+        profile_will_close.remove(self.close)
 
     def showAboutDialog(self):
         aboutDialog = AboutDialog(self)
-        aboutDialog.exec_()
+        aboutDialog.exec()
 
     def showManual(self):
         manual = ManualDialog(self)
-        manual.exec_()
+        manual.exec()
 
     def showSupportDialog(self):
         supportDialog = SupportDialog(parent=self)
-        supportDialog.exec_()
+        supportDialog.exec()
 
     def _onClose(self):
         saveGeom(self, "simulatorDialog")
@@ -187,7 +187,7 @@ class SimulatorDialog(QDialog):
 
     def loadDeckConfigurations(self):
         deckID = self.deckChooser.selectedId()
-        conf = self.mw.col.decks.confForDid(deckID)
+        conf = self.mw.col.decks.config_dict_for_deck_id(deckID)
         numberOfNewCardsPerDay = conf["new"]["perDay"]
         startingEase = conf["new"]["initialFactor"] / 10.0
         intervalModifier = conf["rev"]["ivlFct"] * 100
@@ -217,7 +217,7 @@ class SimulatorDialog(QDialog):
         deckChildren.append(deckID)
         childrenDIDs = "(" + ", ".join(str(did) for did in deckChildren) + ")"
         idCutOff = (
-            self.mw.col.sched.dayCutoff - self.config["retention_cutoff_days"] * 86400
+            self.mw.col.sched.day_cutoff - self.config["retention_cutoff_days"] * 86400
         ) * 1000
 
         schedulerEaseCorrection = 1 if self.schedVersion == 1 else 0
@@ -258,7 +258,7 @@ class SimulatorDialog(QDialog):
                             AND id > {idCutOff}) 
             SELECT adjustedtype, 
                    ( CASE 
-                       WHEN lastivl < 0 THEN lastivl / -60 
+                       WHEN lastivl < 0 THEN CAST(lastivl as float) / -60
                      END )               AS adjustedLastIvl, 
                    Sum(adjustedease = 1) AS incorrectCount, 
                    Sum(adjustedease = 2) AS hardCount, 
@@ -598,7 +598,7 @@ class SimulatorDialog(QDialog):
         self._progress = progress
 
         self._thread.start()
-        self._progress.exec_()
+        self._progress.exec()
 
     def _on_simulation_done(self, data: List[Dict[str, Union[str, int]]]):
         self.__gc_qobjects()
@@ -625,13 +625,14 @@ class SimulatorDialog(QDialog):
         )
 
         self.dialog.clearLastSimulationButton.setEnabled(True)
+        self.dialog.clearAllSimulationButton.setEnabled(True)
 
     def _on_simulation_canceled(self):
         self.__gc_qobjects()
 
         if self._progress:
             # seems to be necessary to prevent progress dialog from being stuck:
-            QApplication.instance().processEvents(QEventLoop.ExcludeUserInputEvents)
+            QApplication.instance().processEvents(QEventLoop.ProcessEventsFlag.ExcludeUserInputEvents)
             self._progress.cancel()
         tooltip("Canceled", parent=self)
 
@@ -650,10 +651,24 @@ class SimulatorDialog(QDialog):
         self.numberOfSimulations -= 1
         if self.numberOfSimulations == 0:
             self.dialog.clearLastSimulationButton.setEnabled(False)
+            self.dialog.clearAllSimulationButton.setEnabled(False)
         if not self.dialog.simulationTitleTextfield.isModified():
             self.dialog.simulationTitleTextfield.setText(
                 "Simulation {}".format(self.numberOfSimulations + 1)
             )
+
+    def clear_all_simulation(self):
+        modifiers = QApplication.keyboardModifiers()
+        if modifiers == Qt.KeyboardModifier.ShiftModifier or ConfirmClearAllDialog(self).exec():
+            while self.numberOfSimulations > 0:
+                self.dialog.simulationGraph.clearLastDataset()
+                self.numberOfSimulations -= 1
+            self.dialog.clearLastSimulationButton.setEnabled(False)
+            self.dialog.clearAllSimulationButton.setEnabled(False)
+            if not self.dialog.simulationTitleTextfield.isModified():
+                self.dialog.simulationTitleTextfield.setText(
+                    "Simulation {}".format(self.numberOfSimulations + 1)
+                )
 
     def toggledUseActualCardsCheckbox(self):
         if not self.dialog.useActualCardsCheckbox.isChecked():
@@ -755,3 +770,23 @@ class SupportDialog(QDialog):
 
     def onGlutanimate(self):
         openLink(self._glutanimate_link)
+
+class ConfirmClearAllDialog(QDialog):
+    def __init__(self, parent):
+        QDialog.__init__(self, parent)
+
+        self.setWindowTitle("Clear all simulations?")
+
+        self.buttonBox = QDialogButtonBox(
+            QDialogButtonBox.StandardButton.Yes | QDialogButtonBox.StandardButton.Cancel
+        )
+        self.buttonBox.accepted.connect(self.accept)
+        self.buttonBox.rejected.connect(self.reject)
+
+        layout = QVBoxLayout()
+        layout.addWidget(QLabel("Clear all simulations?<br>Tip: Hold shift to skip confirmation"))
+        layout.addWidget(self.buttonBox)
+        self.setLayout(layout)
+
+    def close(self):
+        self.reject()

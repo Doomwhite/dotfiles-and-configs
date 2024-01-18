@@ -3,7 +3,9 @@
 	"max_step_reps": 4,
 	"max_ivl": 364,
 	"min_revs": 30,
+	"round_steps": true,
 	"hide_learn": false,
 	"hide_review_day": false,
-	"hide_review_week": false
+	"hide_review_week": false,
+	"hide_review_month": true
 }

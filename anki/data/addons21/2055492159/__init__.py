@@ -196,13 +196,18 @@ class AnkiConnect:
         return model
 
 
-    def getField(self, modelName, fieldName):
-        model = self.getModel(modelName)
-
+    def getField(self, model, fieldName):
         fieldMap = self.collection().models.fieldMap(model)
         if fieldName not in fieldMap:
-            raise Exception('field was not found in {}: {}'.format(modelName, fieldName))
+            raise Exception('field was not found in {}: {}'.format(model['name'], fieldName))
         return fieldMap[fieldName][1]
+
+
+    def getTemplate(self, model, templateName):
+        for ankiTemplate in model['tmpls']:
+            if ankiTemplate['name'] == templateName:
+                return ankiTemplate
+        raise Exception('template was not found in {}: {}'.format(model['name'], templateName))
 
 
     def startEditing(self):
@@ -1269,10 +1274,64 @@ class AnkiConnect:
 
 
     @util.api()
+    def modelTemplateRename(self, modelName, oldTemplateName, newTemplateName):
+        mm = self.collection().models
+        model = self.getModel(modelName)
+        ankiTemplate = self.getTemplate(model, oldTemplateName)
+
+        ankiTemplate['name'] = newTemplateName
+        self.save_model(mm, model)
+
+
+    @util.api()
+    def modelTemplateReposition(self, modelName, templateName, index):
+        mm = self.collection().models
+        model = self.getModel(modelName)
+        ankiTemplate = self.getTemplate(model, templateName)
+
+        mm.reposition_template(model, ankiTemplate, index)
+        self.save_model(mm, model)
+
+
+    @util.api()
+    def modelTemplateAdd(self, modelName, template):
+        # "Name", "Front", "Back" borrows from `createModel`
+        mm = self.collection().models
+        model = self.getModel(modelName)
+        name = template['Name']
+        qfmt = template['Front']
+        afmt = template['Back']
+
+        # updates the template if it already exists
+        for ankiTemplate in model['tmpls']:
+            if ankiTemplate['name'] == name:
+                ankiTemplate['qfmt'] = qfmt
+                ankiTemplate['afmt'] = afmt
+                return
+
+        ankiTemplate = mm.new_template(name)
+        ankiTemplate['qfmt'] = qfmt
+        ankiTemplate['afmt'] = afmt
+        mm.add_template(model, ankiTemplate)
+
+        self.save_model(mm, model)
+
+
+    @util.api()
+    def modelTemplateRemove(self, modelName, templateName):
+        mm = self.collection().models
+        model = self.getModel(modelName)
+        ankiTemplate = self.getTemplate(model, templateName)
+
+        mm.remove_template(model, ankiTemplate)
+        self.save_model(mm, model)
+
+
+    @util.api()
     def modelFieldRename(self, modelName, oldFieldName, newFieldName):
         mm = self.collection().models
         model = self.getModel(modelName)
-        field = self.getField(modelName, oldFieldName)
+        field = self.getField(model, oldFieldName)
 
         mm.renameField(model, field, newFieldName)
 
@@ -1283,7 +1342,7 @@ class AnkiConnect:
     def modelFieldReposition(self, modelName, fieldName, index):
         mm = self.collection().models
         model = self.getModel(modelName)
-        field = self.getField(modelName, fieldName)
+        field = self.getField(model, fieldName)
 
         mm.repositionField(model, field, index)
 
@@ -1314,7 +1373,7 @@ class AnkiConnect:
     def modelFieldRemove(self, modelName, fieldName):
         mm = self.collection().models
         model = self.getModel(modelName)
-        field = self.getField(modelName, fieldName)
+        field = self.getField(model, fieldName)
 
         mm.removeField(model, field)
 
@@ -1325,7 +1384,7 @@ class AnkiConnect:
     def modelFieldSetFont(self, modelName, fieldName, font):
         mm = self.collection().models
         model = self.getModel(modelName)
-        field = self.getField(modelName, fieldName)
+        field = self.getField(model, fieldName)
 
         if not isinstance(font, str):
             raise Exception('font should be a string: {}'.format(font))
@@ -1339,7 +1398,7 @@ class AnkiConnect:
     def modelFieldSetFontSize(self, modelName, fieldName, fontSize):
         mm = self.collection().models
         model = self.getModel(modelName)
-        field = self.getField(modelName, fieldName)
+        field = self.getField(model, fieldName)
 
         if not isinstance(fontSize, int):
             raise Exception('fontSize should be an integer: {}'.format(fontSize))
@@ -1353,7 +1412,7 @@ class AnkiConnect:
     def modelFieldSetDescription(self, modelName, fieldName, description):
         mm = self.collection().models
         model = self.getModel(modelName)
-        field = self.getField(modelName, fieldName)
+        field = self.getField(model, fieldName)
 
         if not isinstance(description, str):
             raise Exception('description should be a string: {}'.format(description))
@@ -1469,6 +1528,24 @@ class AnkiConnect:
         scids = anki.utils.ids2str(cards)
         self.collection().db.execute('update cards set type=3, queue=1 where id in ' + scids)
         self.stopEditing()
+
+
+    @util.api()
+    def answerCards(self, answers):
+        scheduler = self.scheduler()
+        success = []
+        for answer in answers:
+            try:
+                cid = answer['cardId']
+                ease = answer['ease']
+                card = self.getCard(cid)
+                card.start_timer()
+                scheduler.answerCard(card, ease)
+                success.append(True)
+            except NotFoundError:
+                success.append(False)
+
+        return success
 
 
     @util.api()
@@ -1743,6 +1820,12 @@ class AnkiConnect:
 
 
     @util.api()
+    def guiUndo(self):
+        self.window().undo()
+        return True
+
+
+    @util.api()
     def guiDeckOverview(self, name):
         collection = self.collection()
         if collection is not None:
@@ -1767,6 +1850,48 @@ class AnkiConnect:
             return True
 
         return False
+
+
+    @util.api()
+    def guiImportFile(self, path=None):
+        """
+        Open Import File (Ctrl+Shift+I) dialog with provided file path.
+        If no path is given, the user will be prompted to select a file.
+        Only supported from Anki version >=2.1.52
+
+        path: string
+            import file path, note on Windows you must use forward slashes.
+        """
+        if anki_version >= (2, 1, 52):
+            from aqt.import_export.importing import import_file, prompt_for_file_then_import
+        else:
+            raise Exception('guiImportFile is only supported from Anki version >=2.1.52')
+
+        if hasattr(Qt, 'WindowStaysOnTopHint'):
+            # Qt5
+            WindowOnTopFlag = Qt.WindowStaysOnTopHint
+        elif hasattr(Qt, 'WindowType') and hasattr(Qt.WindowType, 'WindowStaysOnTopHint'):
+            # Qt6
+            WindowOnTopFlag = Qt.WindowType.WindowStaysOnTopHint
+        else:
+            # Unsupported, don't try to bring window to top
+            WindowOnTopFlag = None
+
+        # Bring window to top for user to review import settings.
+        if WindowOnTopFlag is not None:
+            try:
+                # [Step 1/2] set always on top flag, show window (it stays on top for now)
+                self.window().setWindowFlags(self.window().windowFlags() | WindowOnTopFlag)  
+                self.window().show()
+            finally:
+                # [Step 2/2] clear always on top flag, show window (it doesn't stay on top anymore)
+                self.window().setWindowFlags(self.window().windowFlags() & ~WindowOnTopFlag) 
+                self.window().show()
+
+        if path is None:
+            prompt_for_file_then_import(self.window())
+        else:
+            import_file(self.window(), path)
 
 
     @util.api()

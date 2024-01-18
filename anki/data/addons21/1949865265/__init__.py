@@ -99,7 +99,7 @@ def get_graph_html(self, data, xmax, **kwargs):
 	)
 
 
-def get_data(self, max_ivl, advanced_mode, max_step_reps):
+def get_data(self, max_ivl, advanced_mode, max_step_reps, round_steps):
 	conds = []
 
 	revlog_limit = self._revlogLimit()
@@ -119,6 +119,11 @@ def get_data(self, max_ivl, advanced_mode, max_step_reps):
 
 	where = f"WHERE {' AND '.join(conds)}" if conds else ""
 
+	if round_steps:
+		rounded_ivl = "(CASE WHEN thetype != 3 AND lastIvl < -86400 THEN CAST(-lastIvl / 86400 AS INT) * -86400 ELSE lastIvl END)"
+	else:
+		rounded_ivl = "lastIvl"
+
 	if not advanced_mode:
 		sql = f"""\
 WITH answers AS (
@@ -137,14 +142,14 @@ WITH answers AS (
 	FROM revlog {where}
 )
 SELECT
-	lastIvl,
+	{rounded_ivl} AS theIvl,
 	thetype,
 	0,
 	SUM(ease > 1),
 	COUNT(*)
 FROM answers
-GROUP BY lastIvl, thetype
-ORDER BY lastIvl"""
+GROUP BY theIvl, thetype
+ORDER BY theIvl"""
 
 	else:
 		sql = f"""\
@@ -192,7 +197,7 @@ WITH answers AS (
 SELECT
 	CASE
 		WHEN lastIvl > 0 AND thetype != 3 THEN NULL
-		ELSE lastIvl
+		ELSE {rounded_ivl}
 	END AS theIvl,
 	thetype,
 	MIN(step_n, {max(0, max_step_reps - 1)}) AS n,
@@ -205,33 +210,49 @@ ORDER BY theIvl"""
 	return self.col.db.all(sql)
 
 
+def get_data_points(correct, total, min_revs):
+	data = []
+	for i in sorted(correct.keys()):
+		t = total[i]
+		if t >= min_revs:
+			data.append((i, correct[i], t))
+	return data
+
+
 def retention_graphs(self):
 	config = mw.addonManager.getConfig(__name__)
 	max_ivl = config.get("max_ivl")
 	min_revs = int(config.get("min_revs"))
 	advanced_mode = bool(config.get("advanced_mode"))
 	max_step_reps = int(config.get("max_step_reps"))
+	round_steps = bool(config.get("round_steps"))
+	show_day = not config.get("hide_review_day")
+	show_week = not config.get("hide_review_week")
+	show_month = not config.get("hide_review_month")
 
 	learning_data = {}
 	day_data = []
 	week_correct = defaultdict(int)
 	week_total = defaultdict(int)
-	data = get_data(self, max_ivl, advanced_mode, max_step_reps)
+	month_correct = defaultdict(int)
+	month_total = defaultdict(int)
+	data = get_data(self, max_ivl, advanced_mode, max_step_reps, round_steps)
 	for ivl, thetype, n, correct, total in data:
 		if thetype == 3:
 			if ivl <= 31 and total >= min_revs:
 				day_data.append((ivl, correct, total))
-			week = (ivl + 6) // 7
-			week_correct[week] += correct
-			week_total[week] += total
+			if ivl <= 364 or not show_month:
+				week = (ivl + 6) // 7
+				week_correct[week] += correct
+				week_total[week] += total
+			month = (ivl + 30) // 31
+			month_correct[month] += correct
+			month_total[month] += total
 		else:
 			learning_data[(thetype, ivl, n)] = (correct, total)
 
-	week_data = []
-	for week in sorted(week_correct.keys()):
-		total = week_total[week]
-		if total >= min_revs:
-			week_data.append((week, week_correct[week], total))
+	week_data = get_data_points(week_correct, week_total, min_revs)
+	month_data = get_data_points(month_correct, month_total, min_revs)
 
 	txt = ""
 	if learning_data and not config.get("hide_learn"):
@@ -239,8 +260,6 @@ def retention_graphs(self):
 		txt += get_learning_table_html(learning_data)
 
 	review_txt = ""
-	show_day = not config.get("hide_review_day")
-	show_week = not config.get("hide_review_week")
 
 	if day_data and show_day:
 		review_txt += get_graph_html(
@@ -258,6 +277,15 @@ def retention_graphs(self):
 			week_data[-1][0],
 			id="review-retention-week",
 			xunit=7
+		)
+
+	if month_data and show_month and (not show_week or data[-1][0] > 364):
+		review_txt += get_graph_html(
+			self,
+			month_data,
+			month_data[-1][0],
+			id="review-retention-month",
+			xunit=31
 		)
 
 	if review_txt:

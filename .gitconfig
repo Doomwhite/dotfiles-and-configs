@@ -28,8 +28,14 @@
 
 [fetch]
 	prune = true
+[worktree]
+	guessRemote = true
 
 [alias]
+	wt = worktree
+	wta = worktree add
+	wtl = worktree list
+	wtr = worktree remove
 	br = branch
 	bra = branch -a
 	brl = branch -l
@@ -38,6 +44,7 @@
 	cgg = config --global -e
 	cgl = config --local -e
 	cl = clone
+	clb = "!f() {\n  repo_url=$1\n  repo_name=$(basename \"$repo_url\")\n  repo_name=\"${repo_name%.*}.git\"\n  git clone --bare \"$repo_url\" \"$repo_name\"\n  cd \"$repo_name\"\n  git config remote.origin.fetch \"+refs/heads/*:refs/remotes/origin/*\"\n}; f"
 	cldn = clean -dn
 	clsm = clone --recurse-submodules 
 	cm = commit
@@ -175,6 +182,18 @@
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/qownnotes/5104/Data/Notes
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/qownnotes/5104/Data
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/qownnotes/current/Data
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/.SM
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/gaming
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/.config/emacs
+	directory = C:/Projetos/quality-merge
+	directory = C:/Projetos/qlt
+	directory = C:/Projetos/quality-3
+	directory = C:/Projetos/quality-2
+	directory = C:/Projetos/quality.git/files
+	directory = C:/Projetos/quality.git/email
+	directory = C:/Projetos/quality.git
+	directory = C:/Projetos/sales.git/ordering
+	directory = C:/Projetos/quality.git/3.4.0
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

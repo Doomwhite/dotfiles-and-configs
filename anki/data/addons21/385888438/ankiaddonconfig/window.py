@@ -209,7 +209,7 @@ class ConfigLayout(QBoxLayout):
         checkbox.stateChanged.connect(
             lambda s: self.conf.set(
                 key,
-                s == (Qt.CheckState.Checked.value if QT6 else Qt.CheckState.Checked),
+                s == (Qt.CheckState.Checked.value if QT6 else Qt.CheckState.Checked), # type: ignore
             )
         )
         self.addWidget(checkbox)
@@ -387,7 +387,7 @@ class ConfigLayout(QBoxLayout):
         def open_color_dialog() -> None:
             color_dialog = QColorDialog(self.config_window)
             if opacity:
-                color_dialog.setOptions(QColorDialog.ShowAlphaChannel)
+                color_dialog.setOptions(QColorDialog.ColorDialogOption.ShowAlphaChannel)
             color_dialog.setCurrentColor(color)
             color_dialog.colorSelected.connect(lambda c: save(c))
             color_dialog.exec()
@@ -455,6 +455,44 @@ class ConfigLayout(QBoxLayout):
         button.clicked.connect(get_path)
 
         return (line_edit, button)
+
+    def shortcut_input(
+        self, key: str, description: Optional[str] = None, tooltip: Optional[str] = None
+    ) -> Tuple[QKeySequenceEdit, QPushButton]:
+        edit = QKeySequenceEdit()
+
+        if description is not None:
+            row = self.hlayout()
+            row.text(description, tooltip=tooltip)
+
+        def update() -> None:
+            val = self.conf.get(key)
+            if not isinstance(val, str):
+                raise InvalidConfigValueError(key, "str", val)
+            val = val.replace(" ", "")
+            edit.setKeySequence(val)
+
+        self.widget_updates.append(update)
+
+        edit.keySequenceChanged.connect(  # type: ignore
+            lambda s: self.conf.set(key, edit.keySequence().toString())
+        )
+
+        def on_shortcut_clear_btn_click() -> None:
+            edit.clear()
+
+        shortcut_clear_btn = QPushButton("Clear")
+        shortcut_clear_btn.setSizePolicy(
+            QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed
+        )
+        shortcut_clear_btn.clicked.connect(on_shortcut_clear_btn_click)  # type: ignore
+
+        layout = QHBoxLayout()
+        layout.addWidget(edit)
+        layout.addWidget(shortcut_clear_btn)
+
+        self.addLayout(layout)
+        return edit, shortcut_clear_btn
 
     # Layout widgets
 
@@ -628,7 +666,7 @@ class ConfigLayout(QBoxLayout):
         """Legacy. Adds QScrollArea > QWidget*2 > ConfigLayout, returns the layout."""
         return self._scroll_layout(
             QSizePolicy.Policy.Expanding if horizontal else QSizePolicy.Policy.Minimum,
-            QSizePolicy.Policy.Expanding if vertical else QSizePolicy.Minimum,
+            QSizePolicy.Policy.Expanding if vertical else QSizePolicy.Policy.Minimum,
             Qt.ScrollBarPolicy.ScrollBarAsNeeded,
             Qt.ScrollBarPolicy.ScrollBarAsNeeded,
         )

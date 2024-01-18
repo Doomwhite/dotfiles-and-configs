@@ -171,7 +171,7 @@ class HotmouseManager:
         self.update_menu()
 
     @staticmethod
-    def get_pressed_buttons(qbuttons: "Qt.MouseButtons") -> List[Button]:
+    def get_pressed_buttons(qbuttons: "Qt.MouseButton") -> List[Button]:
         """Returns list of pressed button names, excluding the button that caused the trigger"""
         buttons = []
         for b in Button:
@@ -190,6 +190,9 @@ class HotmouseManager:
             shortcut_key_str = "q"
         elif mw.reviewer.state == "answer":
             shortcut_key_str = "a"
+        else:
+            shortcut_key_str = "x"  # ignore transition
+
         for btn in btns:
             shortcut_key_str += "_press_{}".format(btn.name)
         if click:
@@ -239,7 +242,7 @@ class HotmouseManager:
             return False
         return self.handle_scroll(wheel_dir, event.buttons())
 
-    def handle_scroll(self, wheel_dir: WheelDir, qbtns: "Qt.MouseButtons") -> bool:
+    def handle_scroll(self, wheel_dir: WheelDir, qbtns: "Qt.MouseButton") -> bool:
         """Returns True if shortcut is executed"""
         curr_time = datetime.datetime.now()
         time_diff = curr_time - self.last_scroll_time

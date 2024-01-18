@@ -19,10 +19,7 @@
 import datetime
 from typing import List
 
-try:
-    from typing import Literal, Final
-except ImportError:
-    from typing_extensions import Literal, Final
+from typing import Literal, Final
 
 CARD_STATE_NEW: Final = 0
 CARD_STATE_LEARNING: Final = 1
@@ -103,7 +100,7 @@ class CollectionSimulator:
         cids = self._mw.col.decks.cids(did, True)
         totalNumberOfCards = len(cids)
         for cid in cids:
-            card = self._mw.col.getCard(cid)
+            card = self._mw.col.get_card(cid)
             
             # old bugs with the V2 scheduler or buggy add-ons could cause due and odue
             # values to be a float, so let's preemptively cast them to an int:

@@ -9,8 +9,14 @@ information and make the graph less legible. Set to 0 to show all.
 
 **min_revs**: Review intervals with less than this many reviews are not shown.
 
+**round_steps**: If true, long learning steps are rounded down to whole days. This makes a practical difference only if
+you have used the v1 or v2 schedulers in the past. The v3 scheduler never stores learning steps with fractional days.
+
 **hide_learn**: If true, statistics for learning steps are never shown.
 
 **hide_review_day**: If true, the graph for learning intervals up to a month is never shown.
 
 **hide_review_week**: If true, the graph for long learning intervals is never shown.
+
+**hide_review_month**: If true, a separate graph for learning intervals over a year is never shown. If you enable it,
+remember to set max_ivl to 0 or a sufficiently large value. True by default (i.e. the graph is not enabled).

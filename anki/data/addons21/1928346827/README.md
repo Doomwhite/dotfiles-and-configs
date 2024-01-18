@@ -20,18 +20,20 @@ mypy .
 # pytest . (pytest no longer works)
 ```
 
-You will need to install the following python packages to run black, mypy and pytest:
+You will need to install the following python packages to run black, mypy and pytest
 
 ```
-pip install aqt pyqt5-stubs mypy black pytest
+pip install aqt PyQt6 mypy black pytest
 ```
+
+You may need to uninstall `pyqt5-stubs` for mypy to work correctly.
 
 # Building ankiaddon file
 
 After cloning the repo, go into the repo directory and run the following command to install the git submodule [ankiaddonconfig](https://github.com/BlueGreenMagick/ankiaddonconfig/)
 
 ```
-git submodule update --init addon/ankiaddonconfig
+git submodule update --init --remote addon/ankiaddonconfig
 ```
 
 After installing the git submodule, run the following command to create an `review_hotmouse.ankiaddon` file
