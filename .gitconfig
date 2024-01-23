@@ -28,14 +28,12 @@
 
 [fetch]
 	prune = true
+	
 [worktree]
 	guessRemote = true
 
 [alias]
-	wt = worktree
-	wta = worktree add
-	wtl = worktree list
-	wtr = worktree remove
+	addf = "!f() { git add --intent-to-add \"$1\" && git update-index --skip-worktree \"$1\"; }; f"
 	br = branch
 	bra = branch -a
 	brl = branch -l
@@ -46,21 +44,24 @@
 	cl = clone
 	clb = "!f() {\n  repo_url=$1\n  repo_name=$(basename \"$repo_url\")\n  repo_name=\"${repo_name%.*}.git\"\n  git clone --bare \"$repo_url\" \"$repo_name\"\n  cd \"$repo_name\"\n  git config remote.origin.fetch \"+refs/heads/*:refs/remotes/origin/*\"\n}; f"
 	cldn = clean -dn
-	clsm = clone --recurse-submodules 
+	clrdn = clean -dn
+	clrfx = clean -f -x
+	clsm = clone --recurse-submodules
 	cm = commit
-	cmp = commit -p
-	cmpm = commit -p -m
 	cmad = commit --amend
 	cmadam = commit --amend -a -m
-	cmadpm = commit --amend -p -m
 	cmadan = commit --amend -a --no-edit
-	cmadpn = commit --amend -p --no-edit
 	cmadm = commit --amend -m
 	cmadn = commit --amend --no-edit
+	cmadpm = commit --amend -p -m
+	cmadpn = commit --amend -p --no-edit
 	cmam = commit -a -m
 	cmm = commit -m
+	cmp = commit -p
+	cmpm = commit -p -m
 	co = checkout
 	cohf = checkout HEAD --
+	cyp = crypt
 	delall = !git branch | grep -vE \"master|dev\" | xargs git branch -D
 	df = diff
 	dfv = difftool -t vimdiff
@@ -74,7 +75,6 @@
 	lomd = log origin/dev..HEAD
 	lomh = log origin/master..HEAD
 	lp = log --color --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'
-	lsw = switch -
 	pl = pull
 	plo = pull origin
 	plod = pull origin dev
@@ -82,14 +82,7 @@
 	ps = push
 	psf = push --force
 	psu = push -u
-	psup = "!f() { \
-        current_branch=$(git rev-parse --abbrev-ref HEAD); \
-        remote_branch=\"$current_branch\"; \
-        if ! git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then \
-            remote_branch=\"--set-upstream origin $current_branch\"; \
-        fi; \
-        git push $remote_branch; \
-    }; f"
+	rao = remote add origin
 	rb = rebase
 	rba = rebase --abort
 	rbc = rebase --continue
@@ -97,107 +90,97 @@
 	rbm = rebase master
 	rescue = !git fsck --full --no-reflogs --unreachable --lost-found | grep commit | cut -d\\  -f3 | xargs -n 1 git log -n 1 --pretty=oneline > .git/lost-found.txt
 	rmpo = remote prune origin
+	rstd = reset --hard origin/dev
+	rstm = reset --hard origin/master
 	safe = config --global --add safe.directory
 	sh = stash
 	sha = stash apply
 	shc = stash clear
 	shl = stash list
 	shs = stash save
+	sm = submodule
+	sma = submodule add
+	smf = submodule foreach --recursive
+	smfup = submodule foreach --recursive 'git up'
+	smfuppl = submodule foreach --recursive 'git uppl'
+	smu = submodule update
 	st = status
 	sw = switch
 	swd = switch dev
 	swm = switch master
 	un = ls-files . --exclude-standard --others
 	up = !git fetch && git status
-	uppl = !git fetch && git status && git pull
-	upmain = !git fetch && git status && git pull origin main
 	updev = !git fetch && git status && git pull origin dev
-	upmaster = !git fetch && git status && git pull origin master
 	uphome = !git fetch && git status && git pull origin home
+	upmain = !git fetch && git status && git pull origin main
+	upmaster = !git fetch && git status && git pull origin master
+	uppl = !git up && git pull
 	upwork = !git fetch && git status && git pull origin work
-  cyp = crypt
-  rao = remote add origin
-  rstd = reset --hard origin/dev
-  rstm = reset --hard origin/master
-  sm = submodule
-  sma = submodule add
-  smf = submodule foreach --recursive
-  smu = submodule update
-  smfuppl = submodule foreach --recursive 'git fetch && git status && git pull'
-  smfup = submodule foreach --recursive 'git fetch && git status'
-	smfupmain = submodule foreach --recursive 'git fetch && git pull origin main'
-	smfupdev = submodule foreach --recursive 'git fetch && git pull origin dev'
-	smfupmaster = submodule foreach --recursive 'git fetch && git pull origin master'
-	smfuphome = submodule foreach --recursive 'git fetch && git pull origin home'
-	smfupwork = submodule foreach --recursive 'git fetch && git pull origin work'
-	smfcomain = submodule foreach --recursive 'git fetch && git checkout main'
-	smfcodev = submodule foreach --recursive 'git fetch && git checkout dev'
-	smfcomaster = submodule foreach --recursive 'git fetch && git checkout master'
-	smfcohome = submodule foreach --recursive 'git fetch && git checkout home'
-	smfcowork = submodule foreach --recursive 'git fetch && git checkout work'
-	addf = "!f() { git add --intent-to-add \"$1\" && git update-index --skip-worktree \"$1\"; }; f"
+	
 [safe]
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/scoop/current
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/versions
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/nerd-fonts
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/extras
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/main
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/rustlings
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/AppData/Local/nvim-data/site/pack/packer/start/plenary.nvim
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/AppData/Local/nvim-data/site/pack/packer/start/packer.nvim
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/AppData/Local/nvim-data/site/pack/packer/start/popup.nvim
-  directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Rust/guessing_game
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/pcsx2-dev/bios
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/pcsx2-dev
-	directory = C:/Projetos/quality-project/quality-app
-	directory = C:/Projetos/quality-project/quality-api
-	directory = C:/Projetos/bsc-project/bsc-app
 	directory = C:/Projetos/bsc-project/bsc-api
-	directory = C:/Projetos/menu-project/menu-app
-	directory = C:/Projetos/menu-project/menu-api
-	directory = C:/Projetos/stats-project/stats-app
-	directory = C:/Projetos/stats-project/stats-api
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/irfanview
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/anki
+	directory = C:/Projetos/bsc-project/bsc-app
 	directory = C:/Projetos/budget-project/budget-api
 	directory = C:/Projetos/budget-project/budget-app
-	directory = C:/Projetos/supply-project/supply-app
-	directory = C:/Projetos/supply-project/supply-api
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/.glaze-wm
-	directory = C:\\Users\\adinelson.bruhmuller.MOVTECH\\AppData\\Local\\nvim\\
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/wangzq
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/rasa
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/C++/alura-cxx
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Rust/rose-offline
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/gpg
-	directory = C:/Projetos/sales-project/sales-app
+	directory = C:/Projetos/menu-project/menu-api
+	directory = C:/Projetos/menu-project/menu-app
+	directory = C:/Projetos/qlt
+	directory = C:/Projetos/quality-2
+	directory = C:/Projetos/quality-3
+	directory = C:/Projetos/quality-merge
+	directory = C:/Projetos/quality-project/quality-api
+	directory = C:/Projetos/quality-project/quality-app
+	directory = C:/Projetos/quality.git
+	directory = C:/Projetos/quality.git/3.4.0
+	directory = C:/Projetos/quality.git/email
+	directory = C:/Projetos/quality.git/files
+	directory = C:/Projetos/sales-project/SalesIntegrationContracts
 	directory = C:/Projetos/sales-project/sales-api
+	directory = C:/Projetos/sales-project/sales-app
+	directory = C:/Projetos/sales.git/ordering
+	directory = C:/Projetos/stats-project/stats-api
+	directory = C:/Projetos/stats-project/stats-app
+	directory = C:/Projetos/supply-project/supply-api
+	directory = C:/Projetos/supply-project/supply-app
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/.config/emacs
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/.glaze-wm
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/.local/share/chezmoi
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/vscode
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/AppData/Local/nvim-data/site/pack/packer/start/packer.nvim
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/AppData/Local/nvim-data/site/pack/packer/start/plenary.nvim
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/AppData/Local/nvim-data/site/pack/packer/start/popup.nvim
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/C++/alura-cxx
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/C++/forgottenserver
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Rust/guessing_game
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Rust/rose-offline
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Zig/advent_of_code_zig_2022
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Zig/ziglings
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/C++/forgottenserver
-	directory = C:/Projetos/sales-project/SalesIntegrationContracts
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Nextcloud/Notes
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/qownnotes/5104/Data/Notes
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/rustlings
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/qownnotes/5104/Data
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/qownnotes/5104/Data/Notes
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/qownnotes/current/Data
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/apps/scoop/current
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/.SM
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/extras
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/gaming
-	directory = C:/Users/adinelson.bruhmuller.MOVTECH/.config/emacs
-	directory = C:/Projetos/quality-merge
-	directory = C:/Projetos/qlt
-	directory = C:/Projetos/quality-3
-	directory = C:/Projetos/quality-2
-	directory = C:/Projetos/quality.git/files
-	directory = C:/Projetos/quality.git/email
-	directory = C:/Projetos/quality.git
-	directory = C:/Projetos/sales.git/ordering
-	directory = C:/Projetos/quality.git/3.4.0
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/main
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/nerd-fonts
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/rasa
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/versions
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/buckets/wangzq
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/anki
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/gpg
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/irfanview
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/pcsx2-dev
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/pcsx2-dev/bios
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/vscode
+	directory = C:\\Users\\adinelson.bruhmuller.MOVTECH\\AppData\\Local\\nvim\\
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [pull]
 	rebase = true
