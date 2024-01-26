@@ -34,6 +34,11 @@
 
 [alias]
 	addf = "!f() { git add --intent-to-add \"$1\" && git update-index --skip-worktree \"$1\"; }; f"
+	wt = worktree
+	wta = worktree add
+    wtab = "!f() { git worktree add --track -b $1 $1 origin/$2; }; f"
+	wtl = worktree list
+	wtr = worktree remove
 	br = branch
 	bra = branch -a
 	brl = branch -l
@@ -75,6 +80,7 @@
 	lomd = log origin/dev..HEAD
 	lomh = log origin/master..HEAD
 	lp = log --color --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'
+    lsw = switch -
 	pl = pull
 	plo = pull origin
 	plod = pull origin dev
@@ -176,6 +182,9 @@
 	directory = C:/Users/adinelson.bruhmuller.MOVTECH/scoop/persist/vscode
 	directory = C:\\Users\\adinelson.bruhmuller.MOVTECH\\AppData\\Local\\nvim\\
 
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Alura/alura-cxx
+	directory = C:\\Users\\adinelson.bruhmuller.MOVTECH\\Documents\\Projects\\Alura\\alura-cxx.git\\main
+	directory = C:/Users/adinelson.bruhmuller.MOVTECH/Documents/Projects/Alura/alura-cxx.git/main
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
