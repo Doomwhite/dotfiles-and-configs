@@ -6,6 +6,11 @@
 	 set ignorecase
 	 set incsearch
 	 set hlsearch 
+	 set relativenumber
+	 set number
+
+" Visual star
+	vmap * y/\<<C-r>*\><CR>
 
 " Easy Movement
 	noremap K {
@@ -13,8 +18,6 @@
 	noremap H ^
 	noremap L $
   noremap gb '.
-  inoremap jk <ESC>
-  inoremap jj <ESC>
 
 	nmap <C-u> 15k
 	nmap <C-d> 15j
@@ -22,12 +25,15 @@
 	vmap <C-d> 15j
 
 " Global Commands
-	nmap <leader>wa :vsc File.SaveAll<CR>
+	nmap <leader>fs :w<CR>
+	nmap <leader>fS :vsc File.SaveAll<CR>
 	nmap ;e :vsc View.SolutionExplorer<CR>
 	nmap <leader>.a :vsc File.SaveAll<CR>
 	nmap <leader>.z :vsc CodeMaid.FindInSolutionExplorer<CR>
 
 " Windows
+	nmap <C-w>x :vsc Window.MoveToNextTabGroup<CR>
+	nmap <C-w>p :vsc Window.MoveToPreviousTabGroup<CR>
 	nmap <C-O> :vsc View.NavigateBackward<CR>
 	nmap <C-I> :vsc View.NavigateForward<CR>
 	vmap <C-O> :vsc View.NavigateBackward<CR>
@@ -44,7 +50,7 @@
 " Search
 	nmap <leader>ef :vsc Tools.InvokeAceJumpCommand<CR>
 	nnoremap <Leader>ff :vsc Edit.GoToRecentFile<CR>
-	nnoremap <Leader>fs :vsc Edit.GoToSymbol<CR>
+	" nnoremap <Leader>fs :vsc Edit.GoToSymbol<CR>
 	nnoremap <Leader>ft :vsc Edit.FindInFiles<CR>
 	nnoremap <leader>eg :vsc Tools.InvokePeasyMotion<CR>
 	nnoremap <leader>ej :vsc Tools.InvokePeasyMotionJumpToLineBegining<CR>
@@ -73,4 +79,4 @@
   " nmap <leader>db
 
 " Formatting
-	nmap <leader>= :vsc CodeMaid.CleanupActiveDocument<CR>
+	nmap <leader>f= :vsc CodeMaid.CleanupActiveDocument<CR>
