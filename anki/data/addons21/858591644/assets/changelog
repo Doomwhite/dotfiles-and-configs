@@ -1,5 +1,13 @@
-#1.0.7
-- Fixed dependency bug that would lead to a crash
+#1.1.2
+- Show region information in UI
+- Replace bad characters in filenames
+- Fix issue "too many values to unpack"
+
+#1.1.1
+- Do network requests in the background to avoid blocking the UI
+
+#1.1.0
+- Added Qt6 support (thanks to @rowantran!)
 
 #1.0.6
 - Now escaping slashes in filename that would lead to issues on certain file systems.

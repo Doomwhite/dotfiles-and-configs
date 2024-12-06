@@ -23,6 +23,7 @@ config = mw.addonManager.getConfig(__name__)
 def refresh_config() -> None:
     global config
     config = mw.addonManager.getConfig(__name__)
+    manager.refresh_shortcuts()
 
 
 def turn_on() -> None:
@@ -144,10 +145,13 @@ class WheelDir(Enum):
 
 
 class HotmouseManager:
+    has_wheel_hotkey: bool
+
     def __init__(self) -> None:
         self.enabled = config["default_enabled"]
         self.last_scroll_time = datetime.datetime.now()
         self.add_menu()
+        self.refresh_shortcuts()
 
     def add_menu(self) -> None:
         self.action = QAction("Enable/Disable Review Hotmouse", mw)
@@ -169,6 +173,14 @@ class HotmouseManager:
     def disable(self) -> None:
         self.enabled = False
         self.update_menu()
+
+    def refresh_shortcuts(self) -> None:
+        self.has_wheel_hotkey = False
+        for shortcut in config["shortcuts"]:
+            if "wheel" in shortcut:
+                self.has_wheel_hotkey = True
+                break
+        print("has wheel", self.has_wheel_hotkey)
 
     @staticmethod
     def get_pressed_buttons(qbuttons: "Qt.MouseButton") -> List[Button]:
@@ -255,82 +267,48 @@ class HotmouseManager:
             return self.enabled
 
 
-@no_type_check
-def event_filter(
-    target: AnkiWebView,
-    obj: QObject,
-    event: QEvent,
-    _old: Callable = lambda t, o, e: False,
-) -> bool:
-    """Because Mouse events are triggered on QWebEngineView's child widgets.
+class HotmouseEventFilter(QObject):
+    @no_type_check
+    def eventFilter(self, obj: QObject, event: QEvent) -> bool:
+        """Because Mouse events are triggered on QWebEngineView's child widgets.
 
-    Event propagation is only stopped when shortcut is triggered.
-    This is so clicking on answer buttons and selecting text works.
-    And `left_click` shortcut should be discouraged because of above.
-    """
-    if target not in WEBVIEW_TARGETS():
-        return _old(target, obj, event)
-    if mw.state == "review":
-        if event.type() == QEvent.Type.MouseButtonPress:
-            if manager.on_mouse_press(event):
-                return True
-        elif event.type() == QEvent.Type.Wheel:
-            if manager.on_mouse_scroll(event):
-                return True
-    return _old(target, obj, event)
-
-
-def on_child_event(target: AnkiWebView, event: QChildEvent) -> None:
-    if target not in WEBVIEW_TARGETS():
-        return
-    if event.added():
-        add_event_filter(event.child(), target)
+        Event propagation is only stopped when shortcut is triggered.
+        This is so clicking on answer buttons and selecting text works.
+        And `left_click` shortcut should be discouraged because of above.
+        """
+        if mw.state == "review":
+            if event.type() == QEvent.Type.MouseButtonPress:
+                if manager.on_mouse_press(event):
+                    return True
+            elif event.type() == QEvent.Type.MouseButtonRelease:
+                if manager.enabled:
+                    btn = Button(event.button())
+                    # Prevent back/forward navigation
+                    if btn == Button.xbutton1 or btn == Button.xbutton2:
+                        return True
+            elif event.type() == QEvent.Type.Wheel:
+                if manager.has_wheel_hotkey and manager.on_mouse_scroll(event):
+                    return True
+            elif event.type() == QEvent.Type.ContextMenu:
+                if manager.enabled:
+                    return True  # ignore event
+        if event.type() == QEvent.Type.ChildAdded:
+            add_event_filter(event.child())
+        return False
 
 
-def on_context_menu(
-    target: QWebEngineView,
-    ev: QContextMenuEvent,
-    _old: Callable = lambda t, e: None,
-) -> None:
-    if target not in WEBVIEW_TARGETS():
-        _old(target, ev)
-        return
-    if manager.enabled and mw.state == "review":
-        return None  # ignore event
-    _old(target, ev)
-
-
-@no_type_check
-def install_filters() -> None:
-    target = AnkiWebView
-    if "eventFilter" in vars(target):
-        target.eventFilter = wrap(target.eventFilter, event_filter, "around")
-    else:
-        target.eventFilter = event_filter
-    if "childEvent" in vars(target):
-        target.childEvent = wrap(target.childEvent, on_child_event, "before")
-    else:
-        target.childEvent = on_child_event
-    if "contextMenuEvent" in vars(target):
-        target.contextMenuEvent = wrap(
-            target.contextMenuEvent, on_context_menu, "around"
-        )
-    else:
-        target.contextMenuEvent = on_context_menu
-
-
-def add_event_filter(object: QObject, master: AnkiWebView) -> None:
+def add_event_filter(object: QObject) -> None:
     """Add event filter to the widget and its children, to master"""
-    object.installEventFilter(master)
+    # Event filters are activated in the order they are installed.
+    object.installEventFilter(hotmouseEventFilter)
     child_object = object.children()
     for w in child_object:
-        add_event_filter(w, master)
+        add_event_filter(w)
 
 
 def install_event_handlers() -> None:
-    install_filters()
     for target in WEBVIEW_TARGETS():
-        add_event_filter(target, target)
+        add_event_filter(target)
 
 
 def add_context_menu_action(wv: AnkiWebView, m: QMenu) -> None:
@@ -373,6 +351,7 @@ def handle_js_message(
 
 
 manager = HotmouseManager()
+hotmouseEventFilter = HotmouseEventFilter()
 
 mw.addonManager.setWebExports(__name__, r"web/.*(css|js)")
 gui_hooks.main_window_did_init.append(install_event_handlers)  # 2.1.28

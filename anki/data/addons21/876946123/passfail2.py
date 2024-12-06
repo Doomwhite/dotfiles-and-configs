@@ -12,10 +12,14 @@
 # Regards to Dmitry Mikheev for writing the original add-on this was
 # derived from, and the Anki team.
 
+from .logger import log
+
 try:
     from typing import Literal, Callable
-except ImportError:
-    ()
+except ImportError as err:
+    log.debug("Typing import failure: %s", err)
+
+from aqt import mw
 
 try:
     from anki.utils import point_version
@@ -27,6 +31,9 @@ except ImportError:
         def point_version():
             return int(version.split(".")[-1])
 
+from . import config
+from . import configuration_menu
+
 from anki.hooks import wrap
 
 from aqt.reviewer import Reviewer
@@ -37,7 +44,7 @@ if point_version() >= 20:
 
 if point_version() >= 45:
     from aqt.utils import tr
-elif point_version() >= 36:
+elif point_version() >= 41:
     from aqt.utils import tr
     from anki.lang import TR
 else:
@@ -49,9 +56,22 @@ def pf2_hook_replace_buttons(
         reviewer,      # type: Reviewer
         card           # type: Card
 ): # type: (...) -> tuple[tuple[int,str], ...]
+    again_text = "Fail"
+    good_text = "Pass"
+
+    if config.as_bool('toggle_names_textcolors'):
+        again_text = "<font color='{}'>{}</font>".format(
+            config.as_str('again_button_textcolor'),
+            config.as_str('again_button_name')
+        )
+        good_text = "<font color='{}'>{}</font>".format(
+            config.as_str('good_button_textcolor'),
+            config.as_str('good_button_name')
+        )
+
     return (
-        (1, "Fail"),
-        (reviewer._defaultEase(), "Pass")
+        (1, again_text),
+        (reviewer._defaultEase(), good_text)
     )
 
 def pf2_hook_remap_answer_ease(
@@ -94,7 +114,7 @@ def pf2_fix_pass_title(
     title = None
     if point_version() >= 45:
         title = tr.actions_shortcut_key(val=2)
-    elif point_version() >= 36:
+    elif point_version() >= 41:
         title = tr(TR.ACTIONS_SHORTCUT_KEY, val=2)
     else:
         title = _("Shortcut key: %s") % 2
@@ -106,6 +126,9 @@ def pf2_fix_pass_title(
 # Init
 def init():
     version = point_version()
+
+    config.load()
+    configuration_menu.configuration_menu_init()
 
     # Answer button list
     if version >= 31:

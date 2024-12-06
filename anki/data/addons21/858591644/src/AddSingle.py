@@ -1,12 +1,10 @@
 import os
 import anki
 from typing import List
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
+from aqt.qt import *
 
 from .Forvo import Pronunciation
-from .util.Util import CustomScrollbar
+from ..src.util.Util import CustomScrollbar
 
 
 class PronunciationWidget(QWidget):
@@ -42,7 +40,7 @@ class PronunciationWidget(QWidget):
         word = QLabel(pronunciation.word)
         word_info_layout.addWidget(word)
         word.setStyleSheet("font-size: 24px; font-weight: bold; color: #000000;")
-        more_info = QLabel("by " + pronunciation.user + " • " + str(pronunciation.votes) + " votes")
+        more_info = QLabel(f"by {pronunciation.user} {pronunciation.origin} • {pronunciation.votes} votes")
         more_info.setStyleSheet("color: #000000;")
         word_info_layout.addWidget(more_info)
         word_info_layout.setContentsMargins(0, 15, 0, 15)
@@ -77,7 +75,7 @@ class AddSingle(QDialog):
         if hidden_entries_amount > 0:
             self.description += f"<b><small>There are {hidden_entries_amount} more entries which you chose to hide by deactivating .ogg fallback.</small></b>"
         self.description_label = QLabel(text=self.description)
-        self.description_label.setAlignment(Qt.AlignCenter)
+        self.description_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.layout.addWidget(self.description_label)
 
         # Create the list
@@ -99,9 +97,9 @@ class AddSingle(QDialog):
         pronunciation_list.setFixedWidth(480)
         pronunciation_list.setMinimumHeight(500)
         pronunciation_list.setVerticalScrollBar(CustomScrollbar())
-        pronunciation_list.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        pronunciation_list.setVerticalScrollMode(QAbstractItemView.ScrollPerPixel)
-        pronunciation_list.setSelectionMode(QAbstractItemView.NoSelection)
+        pronunciation_list.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        pronunciation_list.setVerticalScrollMode(QAbstractItemView.ScrollMode.ScrollPerPixel)
+        pronunciation_list.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
         self.setMaximumHeight(1000)
 
         self.layout.addWidget(pronunciation_list)

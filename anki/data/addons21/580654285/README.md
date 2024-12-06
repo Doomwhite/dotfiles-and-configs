@@ -27,9 +27,11 @@ Now when you scan a word in Yomichan, you should be able to right click the audi
 Yomichan Forvo Server supports a few configuration options, which you can edit by going to Tools > Add-Ons > Yomichan Forvo Server > Config. **Note configuration changes requires you to restart Anki to see effects**.
 
 - `port`                Port that YomiChan will call. Default is 8770
-- `language`            Language code to use in Forvo. Some examples are `ja` for Japanese or `zh` for Mandarin Chinese. Default `ja`. On the Forvo website, you can see what language code is in square brackets beside the language name on a pronunciation.
-- `preferred_usernames` A list of Forvo usernames. This will order the results on top based on this priority. If empty, results will show based on the Forvo website order. Default empty.
+- `language`            Language code to use in Forvo. Some examples are `ja` for Japanese or `zh` for Mandarin Chinese. Default `ja`. On the Forvo website, you can see what language code is in square brackets beside the language name on a pronunciation. If you want to have a separate source for another language, you can add another parameter to the URL to override this config: eg http://localhost:8770/?term={term}&reading={reading}&language=zh
+- `preferred_usernames` A list of Forvo usernames. This will order the results on top based on this priority. If empty, results will show based on the Forvo website order or according to `preferred_countries`. Default empty.
+- `preferred_countries` A list of countries, usually title case. (Eg. "United States"). This will order the results on top based on this priority. `preferred_usernames` takes priority over `preferred_countries`. If empty, results will show based on the Forvo website order or according to `preferred_usernames`. Default empty.
 - `show_gender`         Show the gender symbols (♂, ♀,) beside the username based on their gender. Default `true`.
+- `show_country`        Show the country of the user beside their name. Default `false`.
 
 ## Links
 
@@ -37,6 +39,15 @@ Yomichan Forvo Server supports a few configuration options, which you can edit b
 - Anki Add-on page: https://ankiweb.net/shared/info/580654285
 
 ## Changelog
+### 2024-07-15
+- add support for preferred usernames
+
+### 2024-06-10
+- handle anonymous users
+- support showing country
+
+### 2023-08-30
+- support overriding the language in the URL
 
 ### 2023-07-28
 - fixed deprecated `method_whitelist` in urllib3 Retry and use `allowed_methods`
