@@ -19,10 +19,28 @@
 	noremap L $
   noremap gb '.
 
+	noremap gp :tabp<CR>
+
 	nmap <C-u> 15k
 	nmap <C-d> 15j
 	vmap <C-u> 15k
 	vmap <C-d> 15j
+	
+	" Marks Rebinding
+	" nnoremap M m
+	" nmap m '
+	nnoremap mmw mW
+	nnoremap mme mE
+	nnoremap mmr mR
+	nnoremap mms mS
+	nnoremap mmd mD
+	nnoremap mmf mF
+	nnoremap mw 'W
+	nnoremap me 'E
+	nnoremap mr 'R
+	nnoremap ms 'S
+	nnoremap md 'D
+	nnoremap mf 'F
 
 " Global Commands
 	nmap <leader>fs :w<CR>
@@ -32,13 +50,22 @@
 	nmap <leader>.z :vsc CodeMaid.FindInSolutionExplorer<CR>
 
 " Windows
+	nnoremap <Leader>wx <C-w>x
+	nnoremap <Leader>w= <C-w>=
+	nnoremap <Leader>ws <C-w>s
+	nnoremap <Leader>wv <C-w>v
+	nnoremap <Leader>wh <C-w>h
+	nnoremap <Leader>wj <C-w>j
+	nnoremap <Leader>wk <C-w>k
+	nnoremap <Leader>wl <C-w>l
 	nmap <C-w>x :vsc Window.MoveToNextTabGroup<CR>
 	nmap <C-w>p :vsc Window.MoveToPreviousTabGroup<CR>
 	nmap <C-O> :vsc View.NavigateBackward<CR>
 	nmap <C-I> :vsc View.NavigateForward<CR>
 	vmap <C-O> :vsc View.NavigateBackward<CR>
 	vmap <C-I> :vsc View.NavigateForward<CR>
-	nnoremap <Leader>wn :vsc Window.PreviousDocumentWindowNav<CR>
+	nnoremap <Leader>wn :vsc Window.NextDocumentWindowNav<CR>
+	"  nnoremap <Leader>wp :vsc Window.PreviousDocumentWindowNav<CR>
 	nnoremap <Leader>wp :vsc Edit.GoToRecentFile<CR>
 
 " Comments key bindings
@@ -49,7 +76,7 @@
 
 " Search
 	nmap <leader>ef :vsc Tools.InvokeAceJumpCommand<CR>
-	nnoremap <Leader>ff :vsc Edit.GoToRecentFile<CR>
+	nnoremap <Leader>ff :vsc Edit.GoToFile<CR>
 	" nnoremap <Leader>fs :vsc Edit.GoToSymbol<CR>
 	nnoremap <Leader>ft :vsc Edit.FindInFiles<CR>
 	nnoremap <leader>eg :vsc Tools.InvokePeasyMotion<CR>
@@ -61,8 +88,8 @@
 	nmap gi :vsc Edit.GoToImplementation<CR>
 	nmap gh :vsc Edit.QuickInfo<CR>
 	nmap gr :vsc Edit.FindAllReferences<CR>
-	nmap gp :vsc Edit.PeekDefinition<CR>
-	nmap gq :vsc View.QuickActionsForPosition<CR>
+	" nmap gp :vsc Edit.PeekDefinition<CR>
+	nmap gq :vsc View.QuickActions<CR>
 
 " Debug
 	nmap <leader>db :vsc Debug.ToggleBreakPoint<CR>
@@ -75,8 +102,44 @@
 " Refactor
   nnoremap <leader>rr :vsc Refactor.Rename<CR>
 
-" Debug
-  " nmap <leader>db
+" Build
+  nnoremap <Leader>cc :vsc Build.BuildSolution<CR>
 
 " Formatting
 	nmap <leader>f= :vsc CodeMaid.CleanupActiveDocument<CR>
+
+" https://github.com/VsVim/VsVim/issues/1474
+"" Surround simulating bindings
+"nnoremap s) ciw(<C-r>")<Esc>
+"nnoremap s] ciw[<C-r>"]<Esc>
+"nnoremap s} ciw{<C-r>"}<Esc>
+"nnoremap s> ciw<lt><C-r>"><Esc>
+"nnoremap s" ciw"<C-r>""<Esc>
+"nnoremap s' ciw'<C-r>"'<Esc>
+"nnoremap sw) ciW(<C-r>")<Esc>
+"nnoremap sw] ciW[<C-r>"]<Esc>
+"nnoremap sw} ciW{<C-r>"}<Esc>
+"nnoremap sw> ciW<lt><C-r>"><Esc>
+"nnoremap sw" ciW"<C-r>""<Esc>
+"nnoremap sw' ciW'<C-r>"'<Esc>
+"
+"" Surround delete bindings
+"nnoremap ds) vi(dvhp
+"nnoremap ds] vi[dvhp
+"nnoremap ds} vi{dvhp
+"nnoremap ds> vi<dvhp
+"nnoremap ds" vi"dvhp
+"nnoremap ds' vi'dvhp
+"
+"" Surround change bindings
+"nnoremap cs"' vi"oh<Esc>msvi"l<Esc>cl'<Esc>`scl'<Esc>
+"nnoremap cs'" vi'oh<Esc>msvi'l<Esc>cl"<Esc>`scl"<Esc>
+"
+"" Surround visual selected text
+"vnoremap S" c"<C-r>""<Esc>
+"vnoremap S' c"<C-r>"'<Esc>
+"vnoremap S) c(<C-r>")<Esc>
+"vnoremap S] c[<C-r>"]<Esc>
+"vnoremap S} c{<C-r>"}<Esc>
+"vnoremap S> c<lt><C-r>"><Esc>
+"vnoremap S* c/*<C-r>"*/<Esc>
