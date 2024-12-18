@@ -1,5 +1,5 @@
 [core]
-  editor = emacsclientw
+    editor = vim
   longpaths = true
   filemode = false
   autocrlf = true
@@ -10,7 +10,10 @@
 [user]
   name = Adinelson Brühmüller
   email = adinelson.bruhmuller@movtech.com.br
-  signingkey = 25A0E8E9788E958E
+  signingkey = B333C30784105514
+
+[credential]
+  helper = store
 
 [diff]
   tool = vscode
@@ -48,14 +51,11 @@
 [commit]
   gpgsign = true
 
-[commit]
-  gpgsign = true
-
 [credential "https://gitea.movtech.com.br"]
   provider = generic
 
 [rerere]
-	enabled = true
+  enabled = true
 
 [alias]
   addf = "!f() { git add --intent-to-add \"$1\" && git update-index --skip-worktree \"$1\"; }; f"
@@ -113,7 +113,7 @@
   current_branch=$(git rev-parse --abbrev-ref HEAD); \
       remote_branch=\"$current_branch\"; \
       if ! git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then \
-  	remote_branch=\"--set-upstream origin $current_branch\"; \
+    remote_branch=\"--set-upstream origin $current_branch\"; \
       fi; \
       git push $remote_branch; \
   }; f"
@@ -165,4 +165,7 @@
   ; wtatb = "!f() { git worktree add --track -b $1 $1 origin/$2; }; f"
   ; wtab = "!f() { git worktree add --track -b $1 $1 $2; }; f"
   lsw = switch -
-  credential-manager = credential-manager-core
+
+[gpg]
+  program = C:\\Program Files\\Git\\usr\\bin\\gpg.exe
+
